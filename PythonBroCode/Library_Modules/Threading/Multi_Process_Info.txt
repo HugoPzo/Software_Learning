@@ -1,0 +1,44 @@
+
+"""Enhebrado de datos: En informática, “threading”
+se refiere a la técnica de ejecución concurrente de
+tareas o hilos de ejecución, traducible como “enhebrado de datos”
+o “multiprocesamiento”."""
+
+#**************************************
+
+# Multithreading = Multiprocesamiento
+
+#**************************************
+# Ejecutar tareas en paralelo en diferentes nucleos de la CPU
+# El multihilos es diferente, con el multihilos estamos limitados a ejecutar
+# un solo hilo a la vez debido al GIL.
+
+# Se pueden ejecutar hilos concurrentemente, pero no en paralelo
+
+# Con el multiprocesador se puede realizar, ejecutamos diferentes procesos de
+# manera paralela en diferentes nucleos de la CPU
+
+# El Multiprocesamiento es adecuado en tareas que requieren un uso intensivo del
+# CPU
+
+# El Multihilos es adecuado en tareas (E/S) Entrada y Salida
+
+# No es lo mismo que multihilos
+
+"""from multiprocessing import Process, cpu_count
+import time
+"""
+"""def main():
+    pass"""
+
+
+# Se usa este modulo ya que evita que cuando se ejecuten los procesos secundarios, creen su
+# propio proceso, asi no existe un problema alterno
+
+# En pocas palabras, le decimos a la computadora, que todo se debe ejecutar desde
+# este archivo, que se ejecuten los procesos secundarios,
+# pero que no ejecuten el codigo en los procesos secundarios
+
+
+"""if __name__ == "__name__":
+    pass"""
