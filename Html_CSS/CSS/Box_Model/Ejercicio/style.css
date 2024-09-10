@@ -1,0 +1,36 @@
+body{
+
+    background-color: black;
+    font-family: sans-serif;
+
+}
+
+.card{
+    background: #CCC;
+    text-align: center;
+    width: 400px;
+    /* Centrar Horizontalmente 
+    a lo ancho del total */
+    margin: auto;
+    margin-top: 20px;
+}
+
+h1{
+    padding-top: 10px;
+    font-size: 25px;
+    margin: 0;
+}
+
+h2{
+    font-size: 20px;
+    font-weight: 100;
+    letter-spacing: 2px;
+}
+
+
+p{
+    font-size: 15px;
+    text-align: justify;
+    padding: 20px;
+    background: lightsalmon;
+}

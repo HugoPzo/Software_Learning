@@ -1,0 +1,72 @@
+/* Elemento de bloque */
+/* Se debe modificar width & height para poder visualizar el elemento */
+.caja_titulo{
+    background: red;
+    width: 300px; /* Ancho */
+    height: 200px; /* Altura */
+    padding: 5px; /* Espacio entre la caja y el elemento */
+    margin: 20px; /* Margen externo a la caja */
+    border: 2px solid, yellow; /* Borde de la caja */
+    box-sizing: content-box;
+}
+
+/* Se modifica dentro de la caja que contiene el elemento */
+/* Background dentro de la caja */
+h1{
+    background: blue;
+    text-align: center;
+}
+
+.formulario{
+    background: red;
+    padding: 20px 0 10px 5px;
+    margin-bottom: 20px;
+}
+
+.formulario_input{
+    /* padding-top: 15px; /* Short Hand */ /* Propiedades Acortadas */ 
+    padding: 10px 5px;
+    border: 2px, solid, green;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.formulario_submit{
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background: black;
+    color: white;
+}
+
+
+/* Cajas Box */
+
+
+.box{
+    background-color: black;
+    height: 150px;
+    width: 150px;
+    /* Margin Collapse */
+    margin: 20px; /* Los Margenes se Superponen */ 
+    /* Border */
+    border-width: 20px;
+    border-style: dashed;
+    border-color: #00FF00; 
+    border-radius: 10px;
+
+    /* Border One-line */
+    /* border: 10px, solid, yellow */
+}
+
+.box2{
+    border-radius: 75%;
+    /* border-radius: 10px, 50px */
+    /* border-radius: 10px, 50px, 0, 15px */
+}
+
+.box3{
+    border-top-width: 50px;
+    border-top-color: #2e362e;
+    border-top-right-radius: 100px;
+    border-bottom-left-radius: 25%;
+}
