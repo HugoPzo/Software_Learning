@@ -1,0 +1,18 @@
+
+/* Propiedades de Texto */
+p{
+    color: red;
+    /* Tipografia a cargar
+    Primero 'Cambria', si no carga 'Cochin' */
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 18px; /* Tamaño de la letra */
+    font-weight: 300; /* Grosor del texto (bold, bolder, 100, 200, etc...)*/ 
+    font-style: italic; /* Estilo del text (italic, oblique, normal) 40deg*/
+    text-align: start; /* (Alinear el texto dentro de su contenedor) */
+    text-decoration: overline underline; /* Decoracion de text */
+    line-height: 2; /* Espaciado entre lineas */
+    letter-spacing: 10px; /* Espacio entre letras */
+    text-transform: uppercase; /* Transforma el texto (uppercase, lowercase) */
+    word-wrap: break-word;
+    word-break: break-all;
+}

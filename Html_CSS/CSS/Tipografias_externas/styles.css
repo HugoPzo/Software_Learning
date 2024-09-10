@@ -1,0 +1,22 @@
+/* Importamos una fuente y la definimos */
+/* Se debe descargar la fuente */
+
+@font-face {
+    font-family: "Montserrat"; /* Se puede declarar cualquier nombre */
+    src: url(../Fonts/static/Montserrat-Regular.ttf) format("truetype");
+    font-weight: 400;
+}
+
+/* Se puede <configurar> una fuente conforme al 'font-weight' con el mismo nombre */
+
+@font-face {
+    font-family: "Montserrat"; /* format("truetype") carga mas rapido el archivo */
+                                    /* Definimos que tipo de formato es. */
+    src: url(../Fonts/static/Montserrat-Black.ttf) format("truetype");
+    font-weight: 900;
+}
+
+
+p{
+    font-family: Montserrat;   
+}

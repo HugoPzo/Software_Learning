@@ -1,0 +1,18 @@
+/* Selector Elements */
+p{
+    color: red;
+}
+
+li{
+    color: green;
+}
+
+/* Identificador Grupal (class=) */
+.faltante{
+    color: blueviolet;
+}
+
+/* Identificador Unico (id=)*/
+#ingrediente{
+    color: brown;
+}
