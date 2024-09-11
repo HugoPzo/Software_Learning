@@ -1,0 +1,30 @@
+/* Box Sizing */ 
+
+/* 3:53:42 */
+
+body{
+    margin: 0;
+}
+
+.box{
+    width: 200px;
+    height: 200px;
+    background: red;
+    margin: 10px;
+}
+
+/* Se ajusta dependiendo las caracteristicas dadas */
+/* Solo el contenido sera '100x100' */
+.box-default{
+    box-sizing: content-box;
+    padding: 100px;
+    border: 10px, solid, black;
+}
+
+/* Mantiene el tamaño dado */
+/* El contenido se ajusta */
+.box-border-box{
+    box-sizing: border-box;
+    padding: 100px;
+    border: 10px, solid, black;
+}

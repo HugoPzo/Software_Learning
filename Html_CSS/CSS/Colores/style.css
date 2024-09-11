@@ -1,0 +1,44 @@
+.box{
+    width: 200px;
+    height: 200px;
+    background: red;
+    margin: 20px;
+}
+
+.box1{
+    /* rgb */
+    /* red, green, blue */
+    background-color: rgb(156, 99, 156);
+}
+
+.box2{
+    /* Hexadecimal */
+    background-color: #040;
+}
+
+.box3{
+    /* Hexadecimal */
+    background-color: #DEA310;
+}
+
+.box3{
+    /* rgba */
+    /* a=opacidad */
+    background-color: #a214;
+}
+
+.box4{
+    /* hsl */
+    /* hsl(hue, saturation, lightness) */
+    background-color: hsl(120, 100%, 20%);
+}
+
+.box5{
+    /* hsla */
+    /* hsla(hue, saturation, lightness, alpha) */
+    background-color: hsla(220, 50%, 60%, 50%);
+}
+
+.box6{
+    
+}
