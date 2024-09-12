@@ -39,6 +39,8 @@ try:
     file_menu.add_command(label="Open", command=open)
     file_menu.add_command(label="Delete", command=delete)
     file_menu.add_command(label="Browse", command=browse)
+    file_menu.add_separator()
+    file_menu.add_command(label="Exit", command=quit) # or exit
 
     edit_menu = Menu(menuBar, tearoff=False)
     menuBar.add_cascade(label="Edit", menu=edit_menu)

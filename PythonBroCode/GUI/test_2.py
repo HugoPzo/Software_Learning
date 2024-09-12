@@ -4,6 +4,7 @@
 from tkinter import *
 from tkinter import filedialog
 from tkinter import messagebox
+from tkinter import colorchooser
 
 window = Tk()
 
@@ -62,13 +63,20 @@ file_menu.config(tearoff=False)
 file_menu.add_command(label="Save File", command=save_file)
 file_menu.add_command(label="Read File", command=read_file)
 # ---------------------------------------
+# Window Info
+# ---------------------------------------
+window_title = Label(window,
+                     text="Bienvenido!!!",
+                     fg="#0F0",
+                     bg="#000")
+
+# ---------------------------------------
 
 # Login
 # ---------------------------------------
-login_frame = Frame(window)
-login_frame.place(x=30, y=30)
+login_frame = Frame(window, bg="#222")
 
-login_label = Label(login_frame,text="L O G I N", pady=10)
+login_label = Label(login_frame,text="L O G I N", pady=10, fg="black")
 
 
 user_name_label = Label(login_frame, text="User Name")
@@ -83,7 +91,8 @@ password = Entry(login_frame)
 def send():
     print(user_name.get())
     print(password.get())
-
+    name = user_name.get()
+    window_title.config(text=f"Bienvenido {name}!!!")
 
 def delete():
     user_name.delete(0, END)
@@ -94,8 +103,13 @@ width_buttons = 20
 send_button = Button(login_frame, text="S E N D", width=width_buttons, command=send)
 delete_button = Button(login_frame, text="D E L E T E", width=width_buttons, command=delete)
 
+# ---------------------------------------
 
+# Change Frame Color
+def color_set():
+    login_frame.config(bg=str(colorchooser.askcolor()[1]))
 
+color_button = Button(login_frame, text="C O L O R", width=width_buttons, command=color_set)
 
 
 
@@ -122,13 +136,16 @@ delete_button = Button(login_frame, text="D E L E T E", width=width_buttons, com
 
 # Pack Interface
 # ---------------------------------------
+window_title.pack()
 login_label.pack(side=TOP)
+login_frame.pack(expand=True, fill="both")
 user_name_label.pack()
 user_name.pack()
 password_label.pack()
 password.pack()
 send_button.pack()
 delete_button.pack()
+color_button.pack()
 
 
 
