@@ -30,9 +30,11 @@ window = Tk()
 
 try:
     menuBar = Menu(window) # Create the Menu constructor (Principal Menu) Master = window
-    window.config(menu=menuBar) # Configurate the menu in the window
+    window.config(menu=menuBar, bg="#021") # Configurate the menu in the window
 
-    file_menu = Menu(menuBar, tearoff=False) # Create the file menu (Master = menuBar)
+    # MenuBar color cannot be changed
+
+    file_menu = Menu(menuBar, tearoff=False, bg="#000", fg="#0F0") # Create the file menu (Master = menuBar)
     menuBar.add_cascade(label="File", menu=file_menu) # Set cascade to the menu=file_menu inside menubar
     file_menu.add_command(label="Open", command=open)
     file_menu.add_command(label="Delete", command=delete)
