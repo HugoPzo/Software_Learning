@@ -9,7 +9,7 @@ def download():
     speed = 2
     while download < GB:
         time.sleep(0.05)
-        progress_bar['value'] += (speed/GB) * 100 # 2 / 100 = 0.02 * 100 = 2
+        progress_bar['value'] += (speed /GB) * 100 # 2 / 100 = 0.02 * 100 = 2
         download += speed
         tasks_info.set(f"{download}/{GB} GB completed") # 2 / 100 GB complete
         percent.set(str(int((download/GB)*100)) + "%")  # 2 / 100 = 0.02 * 100 = 2
