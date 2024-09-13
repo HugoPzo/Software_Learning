@@ -5,7 +5,7 @@ import time
 
 def submit_login():
     total_percent = 100
-    total_download = 200
+    total_download = 432
     submit_download = 0
     speed = 1
 
@@ -16,7 +16,7 @@ def submit_login():
         progress_bar["value"] += (speed / total_download) * 100
         submit_download += speed
         # ******************************
-        pb.set(f"{((submit_download/(total_download/total_percent)))}/{total_percent}%")
+        pb.set(f"{int((submit_download/(total_download/total_percent)))}/{total_percent}%")
         tg.set(f"{submit_download}/{total_download}")
 
         window.update_idletasks()
