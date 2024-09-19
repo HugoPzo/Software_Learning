@@ -20,7 +20,7 @@ window.geometry("400x300")
 window.title("Login GUI")
 window.config(bg="black")
 
-photo = PhotoImage(file="IMG/img.png")
+photo = PhotoImage(file="../IMG/img.png")
 window.iconphoto(True, photo)
 
 

@@ -8,7 +8,7 @@ window = Tk()
 
 
 frame = Frame(window)
-frame.config(bg="pink", bd="5", relief=SUNKEN)
+frame.config(bg="pink", bd="100", relief=SUNKEN)
 
 
 

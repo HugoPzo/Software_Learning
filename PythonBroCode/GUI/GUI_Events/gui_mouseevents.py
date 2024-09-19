@@ -7,9 +7,10 @@ def click(event):
     # Button Number --
     # print(event.num)
 
-    print("You press Something")
-    # Coordinates --
+    #print("You press Something")
 
+    # Coordinates --
+    print(f"Coordinates ({event})")
     print(f"Coordinates ({event.x}, {event.y})")
 
 window = Tk()

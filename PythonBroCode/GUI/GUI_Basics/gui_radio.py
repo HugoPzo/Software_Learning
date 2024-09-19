@@ -7,9 +7,9 @@ window = Tk()
 window.config(bg="black")
 
 # radio button = similar to checkbox, but you can only select one from a group
-img = PhotoImage(file="IMG/img.png")
-logo = PhotoImage(file="IMG/Logo.png")
-msi = PhotoImage(file="IMG/msi.png")
+img = PhotoImage(file="../IMG/img.png")
+logo = PhotoImage(file="../IMG/Logo.png")
+msi = PhotoImage(file="../IMG/msi.png")
 
 images = [img, logo, msi] # List of images, assign an image to each radio button
 

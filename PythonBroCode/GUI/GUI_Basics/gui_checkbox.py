@@ -11,7 +11,7 @@ def check_variable():
 
 x = IntVar()
 
-photo = PhotoImage(file="IMG/img.png")
+photo = PhotoImage(file="../IMG/img.png")
 
 check_button = Checkbutton(window,
                            text="Please check the box",

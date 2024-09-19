@@ -15,7 +15,7 @@ window.geometry("500x300") # Declare width x height
 window.title("Hugo's First GUI") # Title of Interface
 
 # Must convert images to PhotoImage, if we want to add an image
-icon = PhotoImage(file="./IMG/Logo.png") # ------
+icon = PhotoImage(file="../IMG/Logo.png") # ------
 
 # Change Interface logo
 window.iconphoto(True, icon)

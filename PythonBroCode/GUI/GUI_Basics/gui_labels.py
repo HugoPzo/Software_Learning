@@ -5,7 +5,7 @@ user_name = "Hugo"
 window = Tk()
 window.title("Label")
 
-photo = PhotoImage(file="IMG/Logo.png") # Must declare 'PhotoImage' after window constructor
+photo = PhotoImage(file="../IMG/Logo.png") # Must declare 'PhotoImage' after window constructor
 
 
 # Create constructor of a label

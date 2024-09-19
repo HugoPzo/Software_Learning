@@ -1,1 +1,86 @@
 /* 4:25:17 */
+
+/* 
+Unidades de Medida (Control y ser precisos)
+
+"Absolutas" - No se usan ----
+
+px - pixels *
+pt - points
+pc - picas
+
+Unidades - Se usan al momento de imprimir el diseño ----
+"Maquetar interfaces tactiles" 
+
+mm - milimetros
+cm - centimeters
+in - inches
+
+Unidades Responsive (relativas) ----
+
+// Dependen de otro valor (valor externo)
+# Se usa para fuente, espaciado - Tipografia (em, rem)
+% - El porcentaje es respecto al contenedor que lo contiene 
+(No se usa en texto, margins & paddings)
+
+em - Vale lo mismo que el font size del elemento padre (Se multiplica por el valor del font size padre)
+-- Si no lo encuentra en el padre, lo busca en el abuelo
+em - 1em
+padre = 30px
+hijo = 1em - 30px -- 2em - 60px
+
+(Es lo mismo que 'em' pero busca el elemento raiz
+rem - 1rem
+
+Medidas del ViewPort ----
+( Medida conforme a la ventana entera)
+( Se usa para Ventanas Modales )
+vh - 50vh # ViewPort height
+vw - 50vw # ViewPort width
+
+- Agarra el elemento mas alto de ambos (vh o vw)
+vmax
+- Agarra el elemento mas pequeño de ambos (vh o vw)
+vmin 
+
+
+----- 
+
+Para tipografia en general (em, rem)
+Para layout o elementos (em, rem, vw, vh) Responsive
+Para precision (px) (bordes, etc...)
+
+
+*/
+
+
+
+div{
+    background: #ededed;
+    font-family: sans-serif;
+    border-left: 5px, solid, #999;
+    width: 400px;
+    font-size: 20px;
+}
+
+h1{
+    margin: 0;
+    font-size: 24px;
+    background-color: red;
+    /* ViewPort */
+    height: 50vh;
+}
+
+span{
+    color: #999;
+    font-size: 16px;
+    font-weight: 100;
+}
+
+p{
+    color: #555;
+    background-color: bisque;
+    margin: 0;
+    /* Responsive */
+    font-size: 1em;
+}

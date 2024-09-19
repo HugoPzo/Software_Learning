@@ -3,7 +3,7 @@ from tkinter import *
 from tkinter import filedialog
 
 def openfile():
-                                            # initialdir = Where will be the deafult path open
+                                            # initialdir = Where it be the deafult path open
     file_path = filedialog.askopenfilename(initialdir="C:\\Users\\hugop\\OneDrive\\Imágenes",
                                            title="Open a Text File",
                                            # Delimit what type of files can be open

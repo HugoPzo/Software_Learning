@@ -6,7 +6,7 @@ def click():
 
     # --------------------------
     # -- Normal Message Box --
-    #messagebox.showinfo(title="This is a Info MessageBox", message="Change the click button")
+    messagebox.showinfo(title="This is a Info MessageBox", message="Change the click button")
     #messagebox.showwarning(title="This is a Warning MessageBox", message="Warning with the button")
     #messagebox.showerror(title="This is an Error MessageBox", message="Error Error Error!!")
 

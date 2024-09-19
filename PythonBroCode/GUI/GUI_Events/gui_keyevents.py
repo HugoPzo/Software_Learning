@@ -14,7 +14,6 @@ window = Tk()
 window.bind("<Key>", keyEvent)
 
 label_event = Label(window, font=("Helvetica", 30))
+
 label_event.pack()
-
-
 window.mainloop()

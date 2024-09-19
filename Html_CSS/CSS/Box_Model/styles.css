@@ -7,8 +7,8 @@
     padding: 5px; /* Espacio entre la caja y el elemento */
     margin: 20px; /* Margen externo a la caja */
     border: 2px solid, yellow; /* Borde de la caja */
-    box-sizing: content-box;
-}
+    box-sizing: border-box; /* Se ajusta una caja dentro de otra IMPORTANTE */
+} 
 
 /* Se modifica dentro de la caja que contiene el elemento */
 /* Background dentro de la caja */
@@ -21,6 +21,7 @@ h1{
     background: red;
     padding: 20px 0 10px 5px;
     margin-bottom: 20px;
+    box-sizing: content-box;
 }
 
 .formulario_input{

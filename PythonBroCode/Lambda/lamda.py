@@ -4,6 +4,7 @@
            # (useful if needed for a short period of time, throw-away)
 
 
+# ---- Structure
 # lambda parameters:expression
 
 # Accept unlimited parameters, but only has one return

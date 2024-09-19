@@ -4,9 +4,9 @@ from tkinter import *
 from tkinter import colorchooser
 
 def click():
+    # color = ((rgb), (hexadecimal color))
     # color = colorchooser.askcolor()
     # --------------------------------------
-    # color = ((rgb), (hexadecimal color))
     # chosen_color = color[1]
     # --------------------------------------
 

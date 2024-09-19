@@ -8,8 +8,8 @@ def temperature():
 window = Tk()
 window.config(bg="black")
 
-image_1 = PhotoImage(file="IMG/Logo.png")
-image_2 = PhotoImage(file="IMG/img.png")
+image_1 = PhotoImage(file="../IMG/Logo.png")
+image_2 = PhotoImage(file="../IMG/img.png")
 
 label_1 = Label(window, image=image_1)
 label_2 = Label(window, image=image_2)

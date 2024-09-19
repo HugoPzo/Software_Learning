@@ -11,7 +11,7 @@ def click():
 
 window = Tk()
 
-photo = PhotoImage(file="IMG/Logo.png")
+photo = PhotoImage(file="../IMG/Logo.png")
 
 window.title("Button")
 

@@ -4,11 +4,11 @@ import time
 
 
 def download():
-    GB = 100
+    GB = 500
     download = 0
     speed = 2
     while download < GB:
-        time.sleep(0.05)
+        time.sleep(0.1)
         progress_bar['value'] += (speed /GB) * 100 # 2 / 100 = 0.02 * 100 = 2
         download += speed
         tasks_info.set(f"{download}/{GB} GB completed") # 2 / 100 GB complete
