@@ -1,0 +1,62 @@
+body{
+    background: #0f0;
+}
+
+.box{
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+    background-color: #f3a;
+}
+
+.box2{
+    width: 1200px;
+    height: 1200px;
+    margin: 20px;
+    background-color: #000;
+    /* No es una imagen, e2s un div */
+    background-image: url("https://aguacatec.es/wp-content/uploads/2023/10/e5a978b8-6772-4c85-a50e-15581af7d483.png");
+    /* El tamaño del fondo sea del tamaño del contenedor */
+    background-size: 100%;
+    /* El tamaño se ajusta a la medida dada */
+    background-size: 100px;
+    /* El 'contain' hace lo necesario para mostrarnos la imagen al menos una vez (Se puede repetir) */
+    background-size: contain;
+    /* La imagen entra completa, se adapta para que entre toda la imagen (1 imagen) */
+    background-size: cover;
+
+    /* Centrar el background */
+    background-position: center;
+    /* background-position: top;
+    background-position: left, 10px, 100px 100px ,etc... */
+
+    /* No repite la imagen */
+    background-repeat: no-repeat;
+    /* background-repeat: repeat-x;
+    background-repeat: repeat-y; */
+
+
+    /* Cuando tenemos un scroll, la imagen se muestra con respecto al scroll */
+    background-attachment: fixed;
+    /* background-attachment: scroll;
+    background-attachment: local; */
+
+
+    /* Con 'background' podemos usar todo a la vez */
+    /* background: img position / size repeat attachment color */
+    /* Debemos poner la barra entre psoition y size */
+    background: url("https://aguacatec.es/wp-content/uploads/2023/10/e5a978b8-6772-4c85-a50e-15581af7d483.png") top, ;
+}    
+
+
+.transp{
+    height: 100%;
+    width: 100%;
+    background-color: #000a;
+}
+
+h2{
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+}

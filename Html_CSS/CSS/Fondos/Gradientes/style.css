@@ -1,0 +1,79 @@
+*{
+    margin: 0;
+}
+
+body{
+    background: #f00;
+    margin: 0;
+}
+
+#contenedores div{
+    margin-bottom: 20px;
+}
+
+
+.box0{
+    width: 200px;
+    height: 200px;
+    /* linear-gradient() - es una funcion */
+    background: linear-gradient(#000, transparent);
+    margin: 0;
+    width: 100%;
+    
+}
+
+.box0 h2{
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+    
+}
+
+.box1{
+    width: 200px;
+    height: 200px;
+    /* linear-gradient() - es una funcion */
+    background: linear-gradient(red, green);
+    /* Rotamos el elemento 90deg */
+    transform: rotate(90deg);
+}
+
+.box2{
+    width: 200px;
+    height: 200px;
+    /* linear-gradient() - es una funcion */
+    /* Cambiamos la direccion del gradiente */
+
+    /* background: linear-gradient(to right,black, green);
+    background: linear-gradient(to left,black, green);
+    background: linear-gradient(to bottom,black, green);
+    background: linear-gradient(to top,black, green); */
+
+
+    /* 3 elementos */
+    background: linear-gradient(to right, #000, #555, #fff);
+    
+}
+
+.box3{
+    width: 200px;
+    height: 200px;
+    /* linear-gradient() - es una funcion */
+    background: linear-gradient(to right, transparent 70%, #555, #fff);
+}
+
+.box4{
+    width: 200px;
+    height: 200px;
+    /* Se especifica desde el centro, una viñeta */
+    /* Un circulo */
+    background: radial-gradient(#000 25%, #555, #fff);
+}
+
+.box5{
+    width: 200px;
+    height: 200px;
+    /* Color conico */
+    /* Es un efecto conico */
+    background: conic-gradient(#777, #753);
+}

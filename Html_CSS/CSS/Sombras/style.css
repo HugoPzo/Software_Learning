@@ -1,0 +1,102 @@
+body{
+    margin: 0;
+}
+
+
+.box{
+
+    width: 300px;
+    height: 400px;
+    background-color: #e2e2e2;
+    margin: auto;
+    margin-top: 50px;   
+
+    /* 3 Tipos de Sombras */
+    /* box-shadow: inset;
+    text-shadow: none; */
+
+    /* Box Shadow --------- */
+    /*box-shadow: sombra_en_horizontal, sombra_hacia_abajo, difuminado-desenfoque, expancion-sombra, color */
+    /* Sin comas (,) */
+    box-shadow: 20px 20px 50px 20px #000;
+
+}
+
+.box2{
+
+    width: 300px;
+    height: 400px;
+    background-color: #e2e2e2;
+    margin: auto;
+    margin-top: 100px;   
+
+    /* Direccion Horizonal */ /* Direccion Vertical */
+    box-shadow: -20px -20px 50px 20px #000;
+
+}
+
+.box3{
+
+    width: 300px;
+    height: 400px;
+    background-color: #e2e2e2;
+    margin: auto;
+    margin-top: 100px;   
+
+    /* Como se aplica */
+    box-shadow: 0 0 40px 0 #0007;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.box3 h2{
+    text-align: center;
+    font-size: 35px;
+    color: #556;
+    
+}
+
+.box3 p{
+    list-style: none;
+    text-align: center;
+    letter-spacing: 1px;
+    line-height: 1.5;
+    word-break: break-all;
+
+}
+
+/* Text Shadow */
+/* Funciona igual que box-shadow, sin expancion */
+.box4{
+
+    width: 300px;
+    background-color: #e2e2e2;
+    margin: auto;
+    margin-top: 100px;   
+
+    /* Como se aplica */
+    box-shadow: 0 0 40px 0 #0007;
+    padding: 15px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.box4 h2{
+    text-shadow: 4px 2px 3px #432;
+}
+
+.box4 p{
+    text-shadow: 2px 1px 5px #f99;
+}
+
+.box4 img{
+    border-radius: 100%;
+    width: 200px;
+    margin: auto;
+
+    /* Dar sombra a imagenes (Normalmente png) */
+    /* filter: drop-shadow() */
+    /* Funciona igual que box-shadow, sin expancion */
+    /* Solo con imagenes que tienen un canal alfa (png) */
+    filter: drop-shadow(0px 0px 10px #a21);
+}
