@@ -1,17 +1,12 @@
 from tkinter import *
-
 try:
 
     def operation():
-
         print(button.grid_info())
-        print(button)
-        print(buttons.index(button))
-        print(buttons)
 
     window = Tk()
     window["bg"] = "black"
-    window.geometry("290x450")
+    window.geometry("401x473")
     window.title("CALCULATOR")
 
     logo = PhotoImage(file="../IMG/IconLogo.png")
