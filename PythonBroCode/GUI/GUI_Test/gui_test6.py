@@ -41,11 +41,6 @@ try:
     number_buttons_width = 9
     number_buttons_height = 3
 
-    calculator_elements = [["CA", "❎"],[7, 8, 9, "/"],
-               [4, 5, 6, "*"],
-               [1, 2, 3, "-"],
-               [ 0, "+"]]
-
     buttons = []
     row = 0
     for elements in calculator_elements:
@@ -72,6 +67,10 @@ try:
 
             column += 1
         row += 1
+
+    for button in buttons:
+
+
 
 
     title_label.pack(fill="both")
