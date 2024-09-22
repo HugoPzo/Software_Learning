@@ -68,7 +68,15 @@ try:
             column += 1
         row += 1
 
+    button_dict = {}
     for button in buttons:
+        # pass each button's text to a function
+        def action(x=button):
+            return text_updation(x)
+
+
+        # create the buttons
+        button_dict[button] = Button(root, text=button,)
 
 
 
