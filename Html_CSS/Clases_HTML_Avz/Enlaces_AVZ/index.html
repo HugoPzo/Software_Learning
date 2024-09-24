@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Area</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <form>
+
+        <h2>
+            Formulario de Contacto
+        </h2>
+
+        <!-- LABELS -->
+        <div class="form_input" id="label_1">
+            <!-- Para enlazar un label con un 'input' usamos 'for=id' -->
+            <label for="texto">Nombre Completo</label>
+            <input type="text" id="texto" placeholder="Hugo Perez Ortiz">
+        </div>
+        <div class="form_input">
+            <!-- Los labels pueden encapsular al elemento que se desea enlazar -->
+            <label>Email
+                <input type="email" placeholder="ejemplo@gmail.com">
+            </label>
+        </div>
+
+        <!-- SELECT & OPTION -->
+        <div class="form_input">
+            <label for="selectionNames">Seleccione un nombre</label>
+            <select name="type-of-names" id="selectionNames">
+                <!-- El 'value="" ' es el valor que se enviara -->
+                <option value="Hugo">Name Hugo</option>
+                <option value="Perez">Lastname Perez</option>
+                <option value="Ortiz">Secondname Ortiz</option>
+            </select>
+        </div>
+
+        <!-- DATALIST & OPTION -->
+        <div class="form_input">
+            <label for="referente">Referente</label>
+                <!-- El 'list=id' debe tenerlo el 'input' -->
+                <!-- El atributo 'name=' se usa para que el script acceda al contenido de ese elemento  -->
+                <input list="referente" name="referente" id="input_datalist">
+                <!-- El 'datalist' debe de tener el 'id' del 'input' -->
+                <datalist id="referente" name="type-of-users">
+                    <option value="user1">Seguidor</option>
+                    <option value="user2">Empresa</option>
+                    <option value="user3">Folleto</option>
+                </datalist>
+            </datalist>
+        </div>
+
+        
+
+
+        <!-- TEXTAREA -->
+        <div class="form_input">
+            <label for="mensaje_ext">Mensaje</label>
+            <textarea placeholder="Deja tu Mensaje" id="mensaje_ext">Deja tu mensaje...</textarea>
+        </div>
+
+        <!-- CHECKBOX -->
+
+        <!-- Terminos y Condiciones -->
+        <!-- Enlaces Avanzados -->
+        <div class="form_input">
+            <label for="checkbox">Acepto <a href="terms.html">Terminos y condiciones</a></label>
+            <input type="checkbox" id="checkbox">
+
+        </div>
+
+        <div>
+
+            <!-- Enlaces dentro del mismo archivo con id's o class's -->
+            <a href="#label_1">LABEL 1 (Nombre Completo)</a>
+
+
+            <!-- Enlace para descargar archivo -->
+            <a href="terms.html" download>DESCARGAR EL ARCHIVO</a>
+
+            <!-- Enlaces para mandar a una pagina distinta -->
+
+            <!-- IMPORTANTE -->
+            <!-- Si tenemos un enlace a una pagina externa, de publicidad por ejemplo, y accedemos sin tener el atributo 
+            'rel="noopenet" la pagina tiene la posibilidad de dirigirnos o cambiar la pagina desde que accedimos a ese enlace, es una brecha de seguridad a timar en cuenta' -- NO TIENE ACCESO AL OBJETO WINDOW.OPENER --  -->
+            <!-- 'rel="noopener'  LA PAGINA NO TIENE ACCESO A 'window.opener'--> 
+            <!-- Es lo mismo que 'noopener' solo que mas segura, ya que no tiene ni acceso a los encabezados, la pagina no sabe desde que pagina llego a ese punto (No deja ningun rastro) -->
+            <!-- 'rel="noreferrer'  LA PAGINA NO TIENE ACCESO A 'window.opener' *******  --> 
+            
+            <!-- 'rel="nofollow' No indexamos la pagina señalada en el enlace, asi nos desligamos que los usuarios al momento de ingresar un enlace, no la reconozca y no la indexe, asi nuestra pagina se deslinda de enlaces externos y se posiciona mejor (No darle entidad a elemento/enlaces externos )--> 
+            
+            <a href="https://google.com" target="_blank" rel="noreferrer">GOOGLE</a>
+
+
+            <!-- Enlace para mandar un mail -->
+            <a href="mailto:perez.hugo.3010@gmail.com">Mandar un Mail</a>
+
+            <!-- Enlace Celular -->
+            <a href="tel:+5565388533">Llamar o Whatsapp</a>
+
+        </div>
+
+
+    </form>
+
+
+</body>
+</html>

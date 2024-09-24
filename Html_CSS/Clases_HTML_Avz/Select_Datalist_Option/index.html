@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Area</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <form>
+
+        <h2>
+            Formulario de Contacto
+        </h2>
+
+        <!-- LABELS -->
+        <div class="form_input">
+            <!-- Para enlazar un label con un 'input' usamos 'for=id' -->
+            <label for="texto">Nombre Completo</label>
+            <input type="text" id="texto" placeholder="Hugo Perez Ortiz">
+        </div>
+        <div class="form_input">
+            <!-- Los labels pueden encapsular al elemento que se desea enlazar -->
+            <label>Email
+                <input type="email" placeholder="ejemplo@gmail.com">
+            </label>
+        </div>
+
+        <!-- SELECT & OPTION -->
+        <div class="form_input">
+            <label for="selectionNames">Seleccione un nombre</label>
+            <select name="type-of-names" id="selectionNames">
+                <!-- El 'value="" ' es el valor que se enviara -->
+                <option value="Hugo">Name Hugo</option>
+                <option value="Perez">Lastname Perez</option>
+                <option value="Ortiz">Secondname Ortiz</option>
+            </select>
+        </div>
+
+        <!-- DATALIST & OPTION -->
+        <div class="form_input">
+            <label for="referente">Referente</label>
+                <!-- El 'list=id' debe tenerlo el 'input' -->
+                <!-- El atributo 'name=' se usa para que el script acceda al contenido de ese elemento  -->
+                <input list="referente" name="referente" id="input_datalist">
+                <!-- El 'datalist' debe de tener el 'id' del 'input' -->
+                <datalist id="referente" name="type-of-users">
+                    <option value="user1">Seguidor</option>
+                    <option value="user2">Empresa</option>
+                    <option value="user3">Folleto</option>
+                </datalist>
+            </datalist>
+        </div>
+
+        
+
+
+        <!-- TEXTAREA -->
+        <div class="form_input">
+            <label for="mensaje_ext">Mensaje</label>
+            <textarea placeholder="Deja tu Mensaje" id="mensaje_ext">Deja tu mensaje...</textarea>
+        </div>
+
+        <!-- CHECKBOX -->
+        <div class="form_input">
+            <label for="checkbox">Acepto Terminos y condiciones</label>
+            <input type="checkbox" id="checkbox">
+        </div>
+
+
+    </form>
+
+
+</body>
+</html>

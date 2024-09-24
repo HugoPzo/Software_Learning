@@ -1,0 +1,18 @@
+-- Etiquetas Obsoletas --
+- Etiquetas que ya no se usan -
+
+<- Etiquetas Obsoletas ->
+
+font - Modificaba la fuente 
+center - Centraba el elemento
+blink - Titiriteaba el texto 
+big - Agrandaba el texto
+strike - Tachar Texto -> (Ahora se usa <del> o <s>)
+tt - Representar codigo -> (Ahora se usa <code>)
+u - Subrayar Texto
+b - Texto en negrita -> (Usamos <strong> Resaltamos el elemento)
+                        <em> - Hacemos emphasis en la palabra 
+
+
+<- Atributos Obsoletos ->
+

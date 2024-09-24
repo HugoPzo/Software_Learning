@@ -1,0 +1,31 @@
+body{
+    background: #444;
+    font-family: sans-serif;
+}
+
+details{
+    background-color: transparent;
+    color: #0F0;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-bottom: none;
+}
+
+details[open]{
+    border: 1px solid #ddd;
+    font-weight: bold;
+}
+
+summary{
+    background-color: transparent;
+    border-bottom: 1px solid #fff;
+    padding: 9px;
+    font-size: 1em;
+    color: #ddd;
+}
+
+ul{
+
+    font-weight: 100;
+}
+

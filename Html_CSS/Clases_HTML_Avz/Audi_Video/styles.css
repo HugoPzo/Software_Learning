@@ -1,0 +1,7 @@
+video{
+    width: 1000px;
+    height: 500px;
+    background: linear-gradient(to bottom, #000, #fff);
+}
+
+/* El 'video' o 'audio' no se puede mover directamente, no se le pueden cambiar sus propiedades a menos que sea en 'js' o directamente en sus propiedades */

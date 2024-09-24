@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio & Video</title>
+</head>
+<body>
+
+    <!-- Etiqueta Video para añadir videos a nuestra pagina -->
+    <!-- 'autoplay muted' atributo para reproducir automaticamente (combinadas)  -->
+    <!-- 'controls' permitimos que se pueda parar e interactuar con el video -->
+    <!-- 'poster="" para poner como miniatura la imagen proporcionada'  -->
+    <!-- 'loop' pone en loop el video -->
+    <video controls autoplay loop muted poster="Siuuuuu.webp" src="https://youtu.be/5HChBDY-Pbw">
+        <!-- Visitar pagina 'mdn web docs' para la documentacion -->
+
+
+        <!-- 'track' sirve para editar las propiedades del video -->
+        
+        <!-- default -> Aparecer por defecto los subtitulos -->
+        <!-- kind="" captions/subtitles -->
+        
+        <!-- srclang="" establecer el idioma de los subtitulos (le decimos al ordenador que es en español) -->
+        <!-- Si queremos modificar el texto, usamos el 'label="" ' -->
+        <track src="" default kind="captions" srclang="es" label="Español (Latinoaméricano)">
+
+        <!-- Este texto aparecera si no es posible cargar el video -->
+        Tu navegador no soporta el Video
+
+    </video>
+
+
+    <!-- Colocamos el audio, no mp4 -->
+    <audio src="https://youtu.be/5HChBDY-Pbw">
+
+        Tu navegador no soporta el audio
+    </audio>
+    
+</body>
+</html>

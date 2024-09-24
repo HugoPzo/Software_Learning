@@ -1,0 +1,19 @@
+Paginas que sean Accesibles para todos
+
+Una pagina web mas accesible, es una pagina que nos da mas visibilidad, un mejor posicionamiento en la web
+
+Siempre pensar en toda la gente que puede acceder a internet, es por eso que debemos hacer accesibles todas nuestras paginas
+
+Los buscadores usan DOM (Document Object Model), antes de llegar a mostrar la pagina web 
+Los buscadores crean varios DOM, para que sean accesibles para todas las personas
+
+Con este atributo permitimos que gente con discapacidad sepa de que se trata el elemento
+arial-label=""
+
+
+Una pagina web debe ser navegable solo con la tecla 'tab' y con 'enter'
+
+
+Buscar cuales son los 'roles'  --> Son los roles que cada etiqueta tiene 
+
+'LightHouse' F12, determinar si es accesible o hacer un analizis interno de la pagina 
