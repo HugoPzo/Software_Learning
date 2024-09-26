@@ -1,0 +1,30 @@
+/* Especifidad */
+
+/* Cascade
+
+!IMPORTANT
+
+style=""
+<style></style> -> Dependiendo la posicion del <link>
+
+#id -> (1, 0, 0)
+.class -> (0, 1, 0)
+h1 -> (0, 0, 1)
+
+*/
+
+#tituloId{
+    color: blueviolet;
+}
+
+.tituloClass{
+    color: #be1010;
+}
+
+h1{
+    color: blue !important; /* Mayor Prioridad */
+}
+
+.tituloClass{
+    color: #be1010 !important; /* Mayor Especifidad */
+}

@@ -1,0 +1,61 @@
+/* Selectores */
+
+img{
+    width: 100%
+}
+
+/* Selector De Atributo */
+
+/* Le damos sus propiedades seleccionando uno de sus atributos */
+img[src="../IMG/MSI.png"]{
+    width: 70%;
+}
+
+/* Seleccionar con terminacion 'png' o cualquier otra terminacion */
+/* '$' significa que no importa el inicio de la ruta */
+img[src$="png"]{
+    width: 80%;
+}
+
+/* Seleccionar con inicio 'MSI' o cualquier otra terminacion */
+/* '^' significa que no importa el final de la ruta */
+img[src^="MSI"]{
+    width: 100%;
+}
+
+
+/* Selectores Descendientes  */
+/* No importa si es hijo directo o no, si se encuentra dentro de un 'ul' funciona */
+ul span{
+    color: rebeccapurple;
+    font-weight: 700;
+}
+
+/* Selector por Hijo Directo */
+/* '>' Significa que debe ser directamente un hijo del elemento, si no es hijo directo, no funcione */
+ul > h3{
+    color: blue;
+
+}
+
+/* Selector Adyacente / Selector de Hermano Adyacente */
+/* Selector de 'hermano' el siguiente elemento */
+
+h1 + p {
+    color: aquamarine;
+}
+
+/* Selector de Hermanos Generales */
+/* Todos los elementos que vengan despues del elemento indicado */
+h1 ~ p{
+    color: brown;
+}
+
+h1 + p + p{
+    color: aquamarine;
+}
+
+
+h1, p{
+    background: #643;
+}

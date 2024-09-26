@@ -1,0 +1,109 @@
+/* PseudoClases */
+
+/* Seleccionar un estado especifico de un elemento */
+/* Se modifica dependiendo del estado en el que se encuentre el elemento */
+
+
+/* Selecciona al elemento raiz */
+:root{
+    color: #00ffff;
+}
+
+
+h1{
+    color: #48e;
+    margin: 30px;
+    font-family: sans-serif;
+}
+
+
+/* Pseudoclases -> Palabras Clave */
+
+/* Seleccionar el elemento cuando el 'mouse este encima' (:hover) */
+h1:hover{
+    color: #a21;
+    font-size: 100px;
+    background: #ddd;
+}
+
+/* Definir propiedades cuando hacemos 'click' (:active) */
+
+h1:active{
+    color: #00ffff;
+    background: #000;
+}
+
+
+/* Seleccionar el primer element */
+li:first-child{
+    color: rgb(54, 0, 248);
+}
+
+/* Seleccionar el ultimo elemento */
+li:last-child{
+    color: rgb(255, 30, 0);
+}
+
+/* Solo se puede seleccionar al primero o al ultimo, solo con */
+/* :nth-child(num) */
+li:nth-child(3){
+    color: #0f0;
+}
+
+/* Elementos por espaciado */
+/* Solo un elemento de cada 2 espacios, etc... */
+li:nth-child(2n){
+    color: #fe2;
+}
+
+/* Si interfiere un elemento externo */
+li:nth-of-type(2n){
+    color: #fe2;
+}
+
+/* Excluir un elemento dentro de un elemento */
+.lista li:not(.excluir){
+    color: #a21;
+}
+
+/* Solo si se encuentra vacio el elemento, sin espacios ni texto */
+div:empty{
+    background-color: #0f0;
+    padding: 30px;
+}
+
+
+/* Si el elemento esta en un estado especifico */
+input[type="checkbox"]:checked{
+    margin: 40px;
+}
+
+
+/* Enlaces NO visitados */
+a:link{
+    color: red;
+}
+
+/* Enlaces Visitados */
+a:visited{
+    color: green;
+}
+
+/* Cuando estamos sobre el elemento */
+a:focus{
+    cursor: pointer;
+}
+
+/* Cuando lo ingresado es invalido */
+input:invalid{
+    color: red;
+}
+
+/* Cuando lo ingresado es valido */
+input:valid{
+    color: green;
+}
+
+
+/* Pseudo Clases Documentacion */
+/* https://developer.mozilla.org/es/docs/Web/CSS/Pseudo-classes */

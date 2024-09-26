@@ -1,0 +1,24 @@
+body{
+    color: brown;
+    font-family: sans-serif;
+}
+
+div{
+    color: #0f0;
+    width: 70%;
+}
+
+h1{
+    color: rebeccapurple;
+    
+}
+
+p{
+    /* Propiedades Heredadas */
+    color: initial;
+    /* No debe heradar las propiedades */
+    width: inherit;
+}
+
+
+
