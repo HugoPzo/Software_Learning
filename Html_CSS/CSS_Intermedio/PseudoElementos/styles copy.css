@@ -1,0 +1,43 @@
+div{
+    padding: 20px;
+}
+
+/* Los pseudoelementos, se representan con (::) dos doble puntos */
+
+h1::first-letter{   
+    color: red;
+    font-size: 3em;
+    letter-spacing: -6px;
+}
+
+/* Al momento de seleccionar el elemento */
+*::selection{
+    background-color: black;
+    color: white;
+}
+
+div::first-line{
+    color: navy;
+    font-weight: bold;
+}
+
+input::placeholder{
+    color: green;
+    background-color: black;
+    padding: 20px;
+}
+
+li::marker{
+    color: #09ff00;
+}
+
+/* No se puede seleccionar */
+li::before{
+    content: "Antes - - ";
+    color: red;
+}
+
+li::after{
+    content: " - - Despues ";
+    color: red;
+}

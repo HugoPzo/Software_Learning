@@ -1,0 +1,91 @@
+body{
+    background: #ddd;
+}
+
+
+/* Caja Relativa */
+
+.box_relative{
+
+    border: 2px solid #000;
+    padding: 20px;
+    box-sizing: border-box;
+
+}
+
+
+.box{
+    width: 100px;
+    height: 100px;
+    background-color: chocolate;
+    color: #fff;
+    /* Siempre mantendra la misma posicion y los mismos atributos */
+    /* ¡Son puntos de referencia! */
+    position: relative;
+    z-index: 20;
+}
+
+.box h4{
+    margin: 0;
+}
+
+.box--blue{
+    background-color: #a51c1c;
+    /* Este elemento siempre mantendra sus especificaciones, sin embargo, la podemos mover de lugar */
+    /* Se mueve tridimensionalmente */
+    position: relative; 
+    /* Los movimientos son RELATIVOS a su posicion */
+    /* Usamos 'top' & 'left' para mover el elemento */
+    top: 30px;
+    left: 40px;
+
+    /* Esta propiedad la movemos tridimensionalmente - En este caso la caja esta por debajo ya que por defecto se encuentran en 'z-index = 20' 
+    Nos encontramos por debajo */
+    z-index: 10;
+    
+}
+
+/* --------------------------------------- */
+
+
+/* Caja Absolute */
+
+.box_absolute{
+    margin-top: 30px;
+    border: 2px solid #000;
+    padding: 20px;
+    box-sizing: border-box;
+
+
+    /* Hacemos relativo el posicionamiento, inclusive de los elementos dentro de este */
+    /* Lo hacemos efectivo a todos los hijos */
+    position: relative;
+}
+
+.box1{
+    width: 100px;
+    height: 100px;
+    background-color: #46230b;
+    color: #fff;
+    
+}
+
+.box1 h4{
+    margin: 0;
+}
+
+.box1--blue{
+
+    background-color: #1a5769;
+    /* El posicionamiento de este elemento ya no esta activo, es un elemento libre */
+    position: absolute;
+
+    top: 100px;
+    left: 200px;
+    margin: auto;
+}
+
+.box1--red{
+    background-color: #5a1111;
+
+}

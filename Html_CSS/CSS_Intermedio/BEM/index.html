@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Metodologia -->
+    <!-- Reutilizar Codigo ****** -->
+    <h1>Block Element Modifier</h1>
+
+    <!-- La METODOLOGIA 'BEM' es aquella que nos ayuda a organizar el codigo -->
+
+    <h2>INGREDIENTES</h2>
+    <!-- BLOQUE ***** -->
+    <ul class="lista">
+        <!-- ELEMENTO ***** -->
+        <!-- Identificamos las clases de esta forma (__)
+            class = "elemento__item" -->
+        <li class="lista__item">SAL</li>
+        <!-- Si se desea destacar el elemento, le agregamos otra clase (--)
+            class = "elemento__item item--funcionalidad" -->
+            <!-- MODIFICADOR ****¨* -->
+        <li class="lista__item item--danino">PAPA</li>   
+        <li class="lista__item">HARINA</li>
+        <li class="lista__item item--importante">AGUA</li>
+    </ul>
+
+    <!-- Se usa para todo tipo de elementos, bloques/elementos -->
+    <ul class="lista lista--vieja">
+        <!-- Identificamos las clases de esta forma
+            class = "elemento__item" -->
+        <li class="lista__item">SAL</li>
+        <!-- Si se desea destacar el elemento, le agregamos otra clase 
+            class = "elemento__item item--funcionalidad" -->
+        <li class="lista__item item--danino">PAPA</li>   
+        <li class="lista__item">HARINA</li>
+        <li class="lista__item item--importante">AGUA</li>
+    </ul>
+
+    <ul class="lista">
+        <!-- Identificamos las clases de esta forma
+            class = "elemento__item" -->
+        <li class="lista__item">SAL</li>
+        <!-- Si se desea destacar el elemento, le agregamos otra clase 
+            class = "elemento__item item--funcionalidad" -->
+        <li class="lista__item item--danino">PAPA</li>   
+        <li class="lista__item">HARINA</li>
+        <li class="lista__item item--importante">AGUA</li>
+    </ul>
+
+    
+</body>
+</html>

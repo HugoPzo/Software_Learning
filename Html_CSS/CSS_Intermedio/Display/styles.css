@@ -1,0 +1,66 @@
+/* Elemento en linea */
+.enlinea{
+    background: #000;
+    color: aliceblue;
+    /* margin -> Solo afecta a los lados en elementos en linea */
+    margin: 100px;
+    /* padding -> No afecta al elemento correctamente, ya que este es en linea -> Se mantiene en el mismo punto */
+    padding: 30px;
+
+    /* Convertimos el elemento de linea en elemento de bloque */
+    /* margin & padding se comportan correctamente */
+    display: block;
+
+}
+
+/* Elemento en Bloque */
+p{
+    background: #634;
+    color: #fff;
+    /* Convertimos el elemento de bloque en elemento de linea */
+    /* Se comportan como elementos en linea */
+    display: inline;
+
+    margin: 80px;
+}
+
+
+/* Elemento en linea-bloque (inline-block) */
+.nav{
+    background: #593;
+}
+
+.nav__item{
+    /* Convertimos a los 'li' en elemento de bloque pero en linea */
+    display: inline-block;
+    padding: 10px;
+}
+
+.nav__link{
+    color: #fff;
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px;
+    background: transparent;
+}
+
+.nav__link:hover{
+    background-color: #595;
+}
+
+.link--button{
+    border: 1px solid #fff;
+    background-color: #ddd;
+    padding: 10px 20px;
+    border-radius: 3px;
+}
+
+.link--button:hover{
+    background-color: #634;
+}
+
+/* El elemento se "borra", ya no aparece en la pagina */
+/* El elemento es invisible */
+.nada{
+    display: none;
+}

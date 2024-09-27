@@ -1,0 +1,21 @@
+.lista{
+    border: 2px solid #000;
+}
+
+.lista--vieja{
+    opacity: 0.3;;
+}
+
+.lista__item{
+    color: #222;
+    margin: 10px 0;
+    list-style: square;
+}
+
+.item--danino{
+    color: red;
+}
+
+.item--importante{
+    color: blue;
+}

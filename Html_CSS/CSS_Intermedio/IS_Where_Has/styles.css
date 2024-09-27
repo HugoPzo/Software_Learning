@@ -1,0 +1,55 @@
+/* 
+section .elemento1,
+section .elemento2,
+section .elemento3{
+    color: red;
+} */
+
+/* WHERE */
+/* WHERE -> No cambia la especifidad -> (0, 0, 1)*/
+section :where(.elemento1, .elemento2, .elemento3){
+    color: #15b653;
+}   
+
+/* IS */
+/* IS -> _Mismo Resultado */
+/* Debe dejarse un espacio */
+/* Especifidad (0, 1, 1) */
+section :is(.elemento1, .elemento2, .elemento3){
+    color: blue;
+}   
+
+/* HAS */
+/* En caso de que se tenga ese elemento seleccionado, aplica los estilos */
+/* No se deja espacio */
+section:has(.elemento1){
+    background: #000;
+    color: #fff;
+}   
+
+/* Si un 'h1' tiene un 'ul' despues, modifica el 'h1' */
+h1:has(+ul){
+    background-color: #15b653;
+    color: blanchedalmond;
+}
+
+
+input:valid{
+    color: green;
+}
+
+input:invalid{
+    color: red;
+}
+
+
+label:has(input:valid){
+    color: greenyellow;
+}
+
+label:has(input:invalid){
+    color: aqua;
+}
+
+
+
