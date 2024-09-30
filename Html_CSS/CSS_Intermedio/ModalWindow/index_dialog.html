@@ -4,25 +4,31 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ventana Modal</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Ventana Modal Dialog</title>
+    <link rel="stylesheet" href="styles_dialog.css">
 
 </head>
 <body>
     
     <!-- Ventana Modal -->
     <!-- 10:26:39 -->
-    <div class="modal">
+
+    <!-- La etiqueta 'dialog' hace el mismo efecto -->
+    <dialog open>
         <div class="modal__content">
             <h2 class="modal__title">VENTANA MODAL</h2>
             <p class="modal__text">
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora, maiores? Molestias ipsa possimus facere accusantium aut cupiditate tenetur eligendi, veritatis aspernatur repudiandae fuga eum delectus obcaecati, culpa corrupti voluptatem? Non!
             </p>
 
-            <button class="modal__close-button">X</button>
 
+            <!-- No es necesario JS -->
+            <!-- Cualquier boton que se encuentre dentro de un 'dialog' - 'form' y tenga un 'button' realizara la accion de cerrar la ventana -->
+            <form method="dialog"">
+                <button class="modal__close-button">X </button>
+            </form>
         </div>
-    </div>
+    </dialog>
 
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam excepturi, temporibus placeat modi vitae molestias distinctio qui, deserunt dicta et ipsum tenetur cupiditate ut illum quibusdam ipsa illo. Vitae, hic.
         Exercitationem recusandae consectetur eveniet quibusdam harum quo aliquam ratione voluptatem facere laboriosam illum adipisci magni totam, itaque vero quisquam vel pariatur porro mollitia amet a obcaecati esse explicabo consequatur. Qui!
@@ -40,10 +46,6 @@
         Laboriosam atque aliquid beatae, reiciendis magnam quod earum ab ratione autem est architecto vel dolore maiores non rem quo molestias dicta voluptas iure eaque totam ipsa dolor! Alias, laborum delectus.
 
 
-        <script>
-            document.querySelector(".modal__close-button").addEventListener("click", ()=>{
-                document.querySelector(".modal").style.display = "none"
-            })
-        </script>
+        
 </body>
 </html>

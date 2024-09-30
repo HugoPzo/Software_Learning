@@ -1,0 +1,66 @@
+body{
+    font-family: sans-serif;
+    margin: 0;
+}
+
+.overlay{
+    background: linear-gradient(to top, #fff, transparent);
+    position: absolute;
+    z-index: 20;
+    width: 100%;
+    bottom: 0;
+    height: 100%;
+}
+
+.contenedor{
+    padding: 150px;
+    background-color: #00f;
+    position: relative;
+}
+
+h2{
+    font-size: 18px;
+    margin: 0;
+}
+
+p{
+    font-size: 14px;
+    margin: 0;
+}
+
+.box{
+    height: 60px;
+    width: 200px;
+    background: #fff;
+
+
+    /* Fijo a la pagina */
+    /* A la posicion 'fixed' no le afecta ni 'relative' ni 'absolute' esta siempre se colocara conforme a la pagina. Se mantendra siempre en la posicion indicada */
+    position: fixed;
+
+    right: 0;
+    border: 1px solid #000;
+    border-right: 0;
+    box-shadow: 0 0 10px 0 #000;
+    z-index: 30;
+}
+
+.box-sticky{
+    height: 60px;
+    width: 200px;
+    background-color: #f00;
+
+    /* Se comporta como un relative, pero si le damos una posicion, en este caso 'top: 20px' esta se va a quedar en esa posicion cuando alcance ese punto*/
+    position: sticky;
+    top: 20px;
+    z-index: 40;
+}
+
+.first{
+    top: 90px;
+}
+
+
+.last{
+    top: 160px;
+}

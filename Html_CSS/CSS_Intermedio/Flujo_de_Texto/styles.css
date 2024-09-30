@@ -1,0 +1,40 @@
+body{
+    margin: 0;
+    font-family: sans-serif;
+    background-color: #bbb;
+
+}
+
+
+.box{
+    width: 200px;
+    height: 200px;
+    margin: auto;
+    margin-top: 50px;
+    background-color: #fff;
+    border: 1px solid #0006;
+
+    /* Todo en una misma linea */
+    white-space: nowrap;
+    /* Como fue escrito - Detecta los saltos de lineas */
+    white-space: pre;
+    /* Mismo que ´pre´ pero respeta los limites */
+    white-space: pre-wrap;
+    white-space: normal;
+
+    /* Mostrar 3 puntos */
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+
+    /* Recorta las palabras enteras */
+    word-break: break-all;
+    /* Predeterminado */
+    word-break: keep-all;
+    
+
+    text-wrap: balance;
+    text-wrap: pretty;
+
+    /* SE USA 'overflow-wrap' ¡IMPORTANTE! */ 
+}

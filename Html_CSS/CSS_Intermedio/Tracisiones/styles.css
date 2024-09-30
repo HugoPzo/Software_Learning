@@ -1,0 +1,71 @@
+body{
+    font-family: sans-serif;
+    height: 100vh;
+}
+
+
+.box{
+    width: 200px;
+    height: 200px;
+    background-color: #a21;
+    /* margin: auto; */
+    margin-top: 50px;
+    font-size: 20px;
+    /* text-align: center;
+    font-weight: bold; */
+    color: red;
+
+    /* 'transition' se coloca en la entidad raiz */
+
+    /* Propiedad de la transicion */
+    /* Se puede transicionar cualquier propiedad */
+    /* transition-property: color; */
+    /* transition-property: background-color, color; */
+    /* transition-property: background-color, color; */
+    transition-property: left;
+    /* Propiedad de la duracion */
+    transition-duration: 1s;
+    /* Tiempo que va a tomar en transicionar */
+    /* transition-delay: 2s; */
+    position: relative;
+    left: 0;
+
+    /* Curva de transicion */
+    /* transition-timing-function: ease;
+    transition-timing-function: ease-in; */
+    transition-timing-function: ease-in-out;
+    /* transition-timing-function: ease-out; */
+
+    /* Curvas de bezier */
+    /* cubic-bezier.com */
+    /* Se puede modificar en CHROME */
+    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+
+
+    /* 'transition: property-duration-function-delay' */
+
+    transition: left 1s cubic-bezier(0.075, 0.82, 0.165, 1) 1s;
+}
+
+
+/* .box:hover{
+    background-color: #a22;
+    color: #fff;
+} */
+
+/* .box:hover{
+    background-color: blue;
+    color: #fff;
+} */
+
+/* Cuanto estamos por encima de 'body' modificamos '.box*/
+/* body:hover .box{
+    '
+    
+    background-color: blue;
+    height: 100vh;
+} */
+
+body:hover .box{
+    left: 400px;
+}
