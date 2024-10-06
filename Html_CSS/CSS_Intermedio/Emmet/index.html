@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMMET</title>
+</head>
+<body>
+
+    <!-- Plug-in -->
+
+    ul>li
+    <ul>
+        <li><a href=""></a></li>
+    </ul>
+
+
+    ul>li*3>a
+    <ul>
+        <li><a href=""></a></li>
+        <li><a href=""></a></li>
+        <li><a href=""></a></li>
+    </ul>
+
+    <!-- Clases -->
+    ul>li*4>a.link
+    <ul>
+        <li><a href="" class="link"></a></li>
+        <li><a href="" class="link"></a></li>
+        <li><a href="" class="link"></a></li>
+        <li><a href="" class="link"></a></li>
+    </ul>
+
+    <!-- Id -->
+    ul>li*1>a#link
+    <ul>
+        <li><a href="" id="link"></a></li>
+    </ul>
+
+
+    header>nav>ul.header-ul>li.list-item*4>a.link
+    <header>
+        <nav>
+            <ul class="header-ul">
+                <li class="list-item"><a href="" class="link"></a></li>
+                <li class="list-item"><a href="" class="link"></a></li>
+                <li class="list-item"><a href="" class="link"></a></li>
+                <li class="list-item"><a href="" class="link"></a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    header>nav>ul.header-ul>li.list-item*4>a.link{link}
+    <header>
+        <nav>
+            <ul class="header-ul">
+                <li class="list-item"><a href="" class="link">link</a></li>
+                <li class="list-item"><a href="" class="link">link</a></li>
+                <li class="list-item"><a href="" class="link">link</a></li>
+                <li class="list-item"><a href="" class="link">link</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Orden -->
+    header>nav>ul.header-ul>li.list-item*4>a.link{link$}
+    <header>
+        <nav>
+            <ul class="header-ul">
+                <li class="list-item"><a href="" class="link">link1</a></li>
+                <li class="list-item"><a href="" class="link">link2</a></li>
+                <li class="list-item"><a href="" class="link">link3</a></li>
+                <li class="list-item"><a href="" class="link">link4</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    script:src
+    <script src=""></script>
+
+
+    <!-- Si se desea guardar una orden, se pueden configurar los snippets -->
+    <!-- Abrimos configuracion -> Snippets -> Ver curso VSC Dalto -->
+
+
+</body>
+</html>

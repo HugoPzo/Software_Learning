@@ -1,0 +1,25 @@
+img{
+    width: 300px;
+    height: 200px;
+
+    border: 2px solid #000;
+
+    /* Predeterminada - Se adapta al tamaño */
+    /* object-fit: fill; */
+
+    /* Muestra la imagen por lo menos una vez en la resolucion dada */
+    object-fit: contain;
+
+    /* Posicion del elemento */
+    object-position: top;
+    object-position: top;
+
+
+    /* La resolucion del elemento se mantiene, no se ajusta al tamaño */
+    object-fit: none;
+
+
+    /* Se queda con el valor mas chico (contain, none) */
+    object-fit: scale-down;
+
+}

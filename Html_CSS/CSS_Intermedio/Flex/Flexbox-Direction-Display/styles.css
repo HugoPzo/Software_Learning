@@ -1,0 +1,42 @@
+.flex__items{
+    width: 500px;
+    height: 20px;
+    background: #d21;
+    text-align: center;
+    color: #fff;
+}
+.flex__items:first-child{
+    background: #000;
+}
+
+.flex__items:last-child{
+    background: #592;
+}
+
+
+/* La propiedad 'display' se le coloca al contenedor principal */
+.flex__box{
+    display: flex;
+    gap: 10px;
+    margin: 50px;
+}
+
+/* Direccion de las cajas dentro del contenedor -> (flex , column) */
+/* Direction -> Es la forma de configurar la escritura -> (arabe) */
+.flex0{
+    flex-direction: row;
+    direction: ltr;
+}
+
+.flex1{
+    flex-direction: row-reverse;
+    direction: ltr;
+}
+
+.flex2{
+    flex-direction: column;
+}
+
+.flex3{
+    flex-direction: column-reverse;
+}

@@ -1,0 +1,104 @@
+.flex__items{
+    width: 300px;
+    height: 20px;
+    background: #d21;
+    text-align: center;
+    color: #fff;
+}
+.flex__items:first-child{
+    background: #000;
+}
+
+.flex__items:last-child{
+    background: #592;
+}
+
+
+/* La propiedad 'display' se le coloca al contenedor principal */
+.flex__box{
+    display: flex;
+    gap: 10px;
+    margin: 50px;
+    border: 1px solid #000;
+    padding: 10px;
+    height: 400px;
+
+    /* Capacidad de que los elementos se alineen dependiendo del tamaño de la pantlla */
+    flex-wrap: wrap;
+}
+
+.flex0{
+    /* Alinea objetos en el EJE PRINCIPAL - MAIN AXIS -> Direccion del texto */
+    justify-content: center;
+    justify-content: start;
+    justify-content: end;
+    justify-content: space-between; /* start - center - end */
+    justify-content: space-around; /* Misma distribucion de los elementos Los margenes NO se superponen*/
+    justify-content: space-evenly; /* Mismo espacio de todos los elementos (equitativo) Los margenes se superponen*/
+
+
+    /* Alinea objetos en el EJE CRUZADO -> CROSS AXIS - Direccion del texto */
+
+    /* Su uso es recomendado cuando es solo una linea de elementos */
+    align-items: stretch; /* Se estiran para llenar el contenedor */
+
+    /* Respeta el tamaaño original & se posiciona al punto dado de su CROSS AXIS*/
+    align-items: start; 
+    align-items: center;
+    align-items: end;
+
+    /* Los items se ajustan a la linea base del texto */
+    align-items: baseline;
+
+
+
+    /* Se uso es recomendable cuando se usan 2 o mas lineas de elementos */
+    align-content: center;
+}
+
+.flex1{
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-around;
+    align-items: end;
+}
+
+
+.flex2{
+    display: flex;
+
+}
+
+/* Se alinea al centro */
+.flex2>.flex__items{
+    margin: auto;
+}
+
+
+/* Ordenamiento en Flexbox */
+/* Solo cambia su order visual */
+.flex3{
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+}
+
+
+/* Order -> Hijos */
+
+/* Le asignamos su orden ´VISUAL' a cada item dentro de el contenedor flex */
+/* En el orden del html sigue siendo el mismo */
+/* Tambien se pueden las 'order: negativas' */
+.order1{
+    order: 3;
+}
+
+.order2{
+    order: 1;
+}
+
+.order3{
+    order: 2;
+}

@@ -1,0 +1,55 @@
+.box{
+    width: 150px;
+    height: 150px;
+    background: #f00;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 100px;
+
+    /* Outline solo tiene una propiedad estetica, no afecta el tamaño ni las 
+    propiedades de los elementos */
+    
+    /* Se comporta exacctamente igual que un border - Mismas Propiedades */
+    outline: 8px double blue;
+    /* El offset es aparte */
+    outline-offset: 10px;
+
+
+    outline-width: 20px;
+    outline-color: fuchsia;
+    outline-style: solid;
+    outline-offset: 20px;
+}
+
+
+.box2{
+    outline: none;
+    transition: ease-in .4s;
+}
+
+.box:hover{
+    outline-offset: 0;
+    outline: 5px solid black;
+}
+
+.input{
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+input{
+    border: none;
+    border-bottom: 2px solid #f26;
+}
+
+input:focus{
+    border-color: blue;
+    color: blue;
+}
+
+/* Se usa focus-visible para el outline, ya que si se usa 'focus' se píerde la accesibilidad */
+input:focus-visible{
+    outline: none;
+}
