@@ -1,0 +1,92 @@
+body{
+    margin: 0;
+    font-family: sans-serif;
+    background: #ddd;
+}
+
+
+.flex__container{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 20px;
+    /* Espaciado entre elementos */
+    gap: 30px;
+
+    width: 80%;
+    margin: auto;
+    background: #fff;
+
+    margin-top: 30px;
+
+    color: #fff;
+}
+
+.flex__items{
+    background: #a21;
+    text-align: center;
+    width: 200px;
+    
+
+    /* Cuanto espacio ocupa del total del contenedo */
+    /* P.E
+    first-child: 2 -> Ocupa 2 de 6 
+    2-child: 1 -> Ocupa 1 de 6
+    last-child: 3 -> Ocupa 3 de 6
+    total: 6*/
+    flex-grow: 1;
+
+    /* Capacidad de definir cuanto se encoje el elemento*/
+    /* first-child: 2 -> Se encoje 2 veces mas
+    2-child: 1 -> Se encoje a su tamaño original
+    last-child: 5 -> Se encoje 5 veces mas */ 
+    /* Con la propiedad 'wrap' no sirve */
+    flex-shrink: 1;
+
+    /* Definimos el 'width de los elementos -> EN LOS FLEX ITEMS SE USA EL 'flex-basis' en lugra del width, es el tamaño base -> Maximo que te puedes achicar antes de encojerte*/
+    /* En direccion en el qu apunta el elemento ->  row - min-width
+    column - min-height */
+    flex-basis: 150px;
+
+    /* Todas las propiedades en una ** */
+    /* flex: flex-grow flex-shrink flex-basis */
+    flex: 1 1 100px;
+
+}
+
+.flex__items:first-child{
+    background: #756;
+    
+    flex-grow: 2;
+    flex-shrink: 2;
+}
+
+.flex__items:nth-child(2){
+    background: #023;
+    
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+.flex__items:nth-child(5){
+    background: rgb(93, 108, 116);
+    
+    /* Alinear un elemento en especifico -> Solo sirve si es alineado por item (align-items) */
+    align-self: stretch;
+}
+
+
+.flex__items:nth-child(3n){
+    background: rgb(19, 117, 167);
+    
+    
+}
+
+.flex__items:last-child{
+    background: #182;
+    
+    flex-grow: 3;
+    flex-shrink: 5;
+}
+

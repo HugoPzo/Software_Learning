@@ -40,6 +40,7 @@
     /* Alinea objetos en el EJE CRUZADO -> CROSS AXIS - Direccion del texto */
 
     /* Su uso es recomendado cuando es solo una linea de elementos */
+
     align-items: stretch; /* Se estiran para llenar el contenedor */
 
     /* Respeta el tamaaño original & se posiciona al punto dado de su CROSS AXIS*/

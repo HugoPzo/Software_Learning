@@ -1,3 +1,7 @@
+/* flex-flow: direccion wrap */
+/* flex-flow: row wrap */
+
+
 .flex__items{
     width: 500px;
     height: 20px;
@@ -26,6 +30,7 @@
 .flex0{
     flex-direction: row;
     direction: ltr;
+
 }
 
 .flex1{
