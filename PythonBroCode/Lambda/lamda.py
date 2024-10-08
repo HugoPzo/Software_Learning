@@ -1,7 +1,7 @@
 # lambda = function written in 1 line using 'lamda' keyword
-           # accepts any number of arguments, but only has one expression.
-           # (think of it as a shortcut)
-           # (useful if needed for a short period of time, throw-away)
+            # accepts any number of arguments, but only has one expression.
+            # (think of it as a shortcut)
+            # (useful if needed for a short period of time, throw-away)
 
 
 # ---- Structure
