@@ -1,0 +1,161 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    font-family: sans-serif;
+
+    box-sizing: border-box;
+    background-color: #634;
+    color: #fff;
+
+    overflow-x: hidden;
+}
+
+/* HEADER SECTION */
+
+.header{
+    min-height: 100vh;
+
+    background-image: url(https://cdn.atomix.vg/wp-content/uploads/2024/10/halo.jpg);
+    background-size: cover;
+    background-position: top;
+
+    display: flex;
+    
+}
+
+.header__overlay{
+    width: 100%;
+    min-height: 100vh;
+
+    /* Capa por encima del fondo */
+    /* Aspecto opaco */
+    background-color: #021a0666;
+    position: absolute;
+    z-index: 1;
+    
+}
+
+.header__item__container{
+
+    /* Posicionamiento por encima del overlay */
+    position: relative;
+    z-index: 10;
+
+    /* Centramos los objetos */
+    margin: auto;
+    text-align: center;
+    /* Limitamos el tamaño del contenedor */
+    max-width: 700px;
+
+    overflow: hidden;
+}
+
+.header__img{
+    min-width: 200px;
+    max-width: 40%;
+    border-radius: 50%;
+    border: 6px solid #fff;
+    margin: 40px;
+}
+
+
+/* Se puede usar 'h1' ya que solo se debe usar una vez */
+h1{
+    margin: 0;
+
+    font-size: 3.2rem;
+    text-wrap: balance;
+}
+
+.header__item__container p{
+    text-wrap: pretty;
+}
+
+/* NAVBAR SECTION */
+
+.nav{
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    flex-wrap: wrap;
+    position: sticky;
+    top: 0;
+    margin-bottom: 20px;
+    box-shadow: 0 0 25px #fff;
+}
+
+.nav__ul{
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+}
+
+.nav__item{
+    list-style: none;
+}
+
+.nav__ul-container{
+    flex-grow: 4;
+    text-align: center;
+}
+
+.nav__logo-container{
+    flex-grow: 1;
+    text-align: center;
+}
+
+.nav__link{
+    color: #634;
+    text-decoration: none;
+    padding: 10px;
+    margin: 10px;
+    display: inline-block; 
+    border-radius: 0;
+    transition: border 0.3s, border-radius 0.3s, outline 0.3s, outline-offset 0.3s;
+    outline: 0;
+    outline-offset: 0;
+}
+
+.nav__link:hover{
+    background-color: #634563;
+    border-radius: 8px;
+    color: #fff;
+
+    outline: 2px solid #fff;
+    outline-offset: -5px;
+}
+
+.link--login{
+    background-color: #634;
+    color: #fff;
+    border-radius: 8px;
+    padding: 8px 24px;
+    margin-left: 8px;
+}
+
+.link--login:hover{
+    background-color: #634c;
+    outline: none;
+}
+
+.nav__logo{
+    width: 70px;
+}
+
+/* MAIN SECTION */
+
+main{
+    max-width: 800px;
+    margin: auto;
+    font-size: 30px;
+    text-align: justify;
+    text-wrap: balance;
+    padding: 20px  ;
+}
