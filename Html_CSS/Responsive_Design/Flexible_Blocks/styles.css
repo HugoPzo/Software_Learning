@@ -1,0 +1,43 @@
+body{
+    font-family: sans-serif;
+    margin: 0;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    gap: 10px;
+    flex-flow: row wrap;
+    max-width: 1000px;
+    min-width: 500px;
+
+    border: 2px solid #000;
+    padding: 15px;
+    margin-top: 10px;
+}
+
+.bloque{
+
+    /* Establecemos Maximos y Minimos 'width' 
+    El minimo que se puede encoger y el maximo que se puede expandir */
+    /* max-width: 500px; */
+    min-width: 200px;
+
+    /* Lo mas recomendable es no establecer un 'height'
+    Si es necesario, lo mejor seria establecer un solo un 'min-height' */
+    /* min-height: 100px; */
+
+    flex: 1;
+
+
+    background-color: #a21;
+    color: white;
+    padding: 10px;
+    box-sizing: border-box;
+
+}
+
+.bloque p{
+    margin: 0;
+}

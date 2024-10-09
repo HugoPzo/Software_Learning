@@ -1,0 +1,34 @@
+body{
+    margin: 0;
+    font-family: sans-serif;
+}
+
+div, body{
+    box-sizing: border-box;
+}
+
+/* Hacer Responsive IMAGEN */
+
+img{
+    /* SIEMPRE APLICAR -- IMPORTANTE */
+
+    /* Maximo al tamaño del dipositivo */
+    /* Se ajusta al tamaño del dispositivo */
+    max-width: 100%;
+    height: auto;
+
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+/* Hacer Responsive Video */
+/* Video Flexible */
+/* SIEMPRE APLICAR A VIDEOS, SE AJUSTA RESPECTO A LA PANTALLA */
+.contendor{
+    max-width: 100%;
+    aspect-ratio: 16/9;
+}
+
+iframe{
+    max-width: 100%;
+}
