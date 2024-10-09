@@ -9,6 +9,7 @@ dialog{
     /* position: absolute; */
     background-color: #0009;
     height: 100vh;
+    width: 100%;
     box-sizing: border-box;
 }
 

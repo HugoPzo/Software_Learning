@@ -44,7 +44,7 @@ body{
     /* Con la propiedad 'wrap' no sirve */
     flex-shrink: 1;
 
-    /* Definimos el 'width de los elementos -> EN LOS FLEX ITEMS SE USA EL 'flex-basis' en lugra del width, es el tamaño base -> Maximo que te puedes achicar antes de encojerte*/
+    /* Definimos el 'width de los elementos -> EN LOS FLEX ITEMS SE USA EL 'flex-basis' en lugar del width, es el tamaño base -> Maximo que te puedes achicar antes de encojerte*/
     /* En direccion en el qu apunta el elemento ->  row - min-width
     column - min-height */
     flex-basis: 150px;
