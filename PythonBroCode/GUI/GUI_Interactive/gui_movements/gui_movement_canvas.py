@@ -13,7 +13,7 @@ def move_up(event):
 def move_down(event):             # Not necessary "+10" only "10"
     canvas.move(myImage, 0, +10)
 def move_right(event):
-    canvas.move(myImage, +10, 0)
+    canvas.move(myImage, 10, 0)
 def move_left(event):
     canvas.move(myImage, -10, 0)
 
@@ -37,4 +37,8 @@ photoImage = PhotoImage(file="avion-de-papel.png")
         # canvas.create_image(x, y, image=photoImage, anchor=Position in Canvas)
 myImage = canvas.create_image(0,0, image=photoImage, anchor=NW)
 
+while True:
+    print(canvas.coords(myImage))
+    window.update()
+    
 window.mainloop()

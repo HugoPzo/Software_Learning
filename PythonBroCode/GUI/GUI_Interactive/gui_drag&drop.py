@@ -26,10 +26,10 @@ def drag_motion(event):
     widget.place(x=x, y=y)
 
 
-    # Return the top left "x" position of the widget in the window
+    # Return the top left "x" position of the WIDGET in the window
     # -- print(label.winfo_x()) --
     #print(x)
-    # Return the top left "y" position of the widget in the window
+    # Return the top left "y" position of the WIDGET in the window
     # -- print(widget.winfo_y()) --
     #print(y)
 
