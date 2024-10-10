@@ -3,11 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>srcet & sizes</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     
     <!-- 13:56:07 -->
+
+    <!-- Rendimiento de carga de la pagina -->
+    <!-- Se carga la imagen o elemento dependiendo de las resoluciones de la pantalla -->
+
+    <!-- 'srcset = ""  
+    -> Establecemos que imagenes se iran cargando dependiendo de las que le especifiquemos
+    ' 
+    Si la resolucion de la pantalla es 
+
+    Resolucion -> 300w -> Se usa 'w'
+    En pantallas:
+
+    MSI.png <= 350w
+    paisaje.jpg <= 600w
+    MSI_MEG_ACE.jpg <= 1000w
+
+    sizes="" -> Solo trabaja con srcset, Se pueden dar varias condiciones
+    Le hacemos una recomendacion al navegador de que deberia usar dependiendo de la condicio
+    
+    P.e: 
+    Si la pantalla es de (max-width: si la pantalla es de 700px) usa imagen de 600px, para una pantalla mayor usa la de 1000px
+    -->
+
+    <img src="MSI.png" alt="Imagen"
+    
+    srcset="MSI.png 350w, paisaje.jpg 600w, MSI_MEG_ACE.jpg 1000w" 
+    sizes="(max-width: 400px) 350px, (max-width: 600px) 500px, 900px">
 
 </body>
 </html>

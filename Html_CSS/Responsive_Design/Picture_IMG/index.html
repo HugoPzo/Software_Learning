@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Picture-Source-</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <!-- Solo se usa cuando son resoluciones muy grandes -->
+    <!-- picture -> Es un CONDICIONANTE
+    Se acomoda de mayor a menor importancia-->
+    <!-- Verifica que el navegador soporte el tipo de imagen -->
+    <picture>
+        <!-- Tambien se puede usar como un condicional, establecer una imagen como prioritatia a cargar, si no carga, carga la siguiente -->
+        <!-- <source srcset="Halo-Studios.webp" type="image/webp"> -->
+
+        <!-- source srcset="imagen_a_cargar" media="(condicion max-width: resolucion)" -->
+        <source srcset="MSI.png" media="(max-width: 300px)">
+        <source srcset="paisaje.jpg" media="(max-width: 600px)">
+        <source srcset="MSI_MEG_ACE.jpg">
+        <!-- Se coloca un 'img' en caso de que no se pueda cargar ninguna de las imagenes anteriores -->
+        <img src="MSI_MEG_ACE.jpg" >
+    </picture>
+
+</body>
+</html>
