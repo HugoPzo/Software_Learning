@@ -46,7 +46,7 @@ try:
     #           .sendmail(sender, receiver, message)
     server.sendmail(sender, receiver, message)
     print("Email sent!")
-    
+
 except Exception as e:
     print(f"Error: {e}")
 except smtplib.SMTPAuthenticationError:
