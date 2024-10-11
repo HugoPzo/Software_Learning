@@ -193,6 +193,10 @@ Badges en Google
 
 #### Badges Dinamicas
 
+https://shields.io/
+
+https://github.com/Ileriayo/markdown-badges?tab=readme-ov-file#markdown-badges
+
 ![GitHub followers](https://img.shields.io/github/followers/HugoPzo)
 
 # - Emojis -
