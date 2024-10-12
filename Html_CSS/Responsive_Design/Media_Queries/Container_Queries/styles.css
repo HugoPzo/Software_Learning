@@ -1,0 +1,55 @@
+Dbody{
+    font-family: sans-serif;
+    margin: 0;
+}
+
+.container{
+
+    /* 'QUERIE' ES UNA CONSULTA -> UN TIPO DE 'IF' PREGUNTAMOS AL NAVEGADOR POR CONTEXTOS ESPECIFICOS 
+    
+    EJEMPLOS DE QUERIES
+    @media
+    @support
+    @container
+    */
+
+    /* Definimos al elemento como contenedor  - EL TIPO DE CONTENEDOR*/
+    /* CONTAIN CONTEXT */
+
+    /* EN LINEA */
+    /* La CONSULTA DE REFERENCUA se basa en el ANCHO del contenedor especificado (ANCHO MAXIMO - ANCHO MINIMO) */
+    /* container-type: inline-size -> Condicionamos las propiedades que le daremos por su ANCHO
+    
+    /* EN BLOQUE */
+    /* La CONSULTA DE REFERENCUA se basa en el ALTO O EN EL TAMAÑO DEL BLOQUE del contenedor especificado (ALTURA MAXIMA - ALTURA MINIMA) */
+    /* container-type: size -> Solo tiene en cuenta las dimensiones en BLOQUE Y EN LINEA  */
+
+    /* NO ES UN QUERY CONTAINER */
+    /* container-type: normal -> No es un query container  */
+
+    container-type: inline-size;
+
+    /* Definimos el nombre al query */
+    container-name: main;
+}
+
+p{
+    font-size: 8px;
+}
+
+
+/* Se aplica a todos los contenedores */
+@container (max-width: 500px){
+    p{
+        font-size: 20px;
+    }
+}
+
+/* Se aplica solo al contenedor 'main' */
+@container main (max-width: 500px){
+    p{
+        font-size: 70px;
+        background-color: #000;
+        color: red;
+    }
+}

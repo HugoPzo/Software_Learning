@@ -1,0 +1,22 @@
+body{
+    font-family: sans-serif;
+    margin: 0;
+}
+
+
+/* Si el navegadro soporta (argumento) {
+    Codigo CSS
+
+} */
+@supports (color: oklch(30% 0.2 30)){
+    body{
+        color: oklch(80% 0.2 30)
+    }
+}
+
+/* Si el navegador no lo soporta */
+@supports not (color: oklch(30% 0.2 30)){
+    body{
+        color: oklch(80% 0.2 30)
+    }
+}

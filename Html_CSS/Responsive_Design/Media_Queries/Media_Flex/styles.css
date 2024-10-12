@@ -1,0 +1,25 @@
+body{
+    margin: 0;
+    font-family: sans-serif;
+}
+
+div, body{
+    box-sizing: border-box;
+}
+
+.flex{
+    display: flex;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.flex__item{
+    padding: 20px;
+    border: 2px solid #a21;
+}
+
+@media screen and (max-width:480px){
+    .flex{
+        flex-direction: column;
+    }
+}

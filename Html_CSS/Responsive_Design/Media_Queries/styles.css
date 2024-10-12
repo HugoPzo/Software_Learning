@@ -1,0 +1,33 @@
+body{
+    font-family: sans-serif;
+    margin: 0;
+}
+
+div, body{
+    box-sizing: border-box;
+}
+
+
+/* @media -> Consulta */
+
+/* Iniciamos Media Querie en los dispositivos de impresion */
+@media print{
+    body{
+        font-size: 25pt;
+    }
+}
+
+/* Media Querie en pantallas */
+@media screen{
+    body{
+        font-size: 40px;
+    }
+}
+
+/* Aplicamos este estilo para dispositivos que cuentan con pantalla y NO SON MAS GRANDES A 500px  <500px */
+@media screen and (max-width:500px){
+    body{
+        font-size: 10px;
+        background-color: #000;
+    }
+}
