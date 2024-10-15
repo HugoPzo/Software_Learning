@@ -13,7 +13,8 @@ try:
         result.set(str(final_number))
 
     def operation():
-        result = bu
+        pass
+        # result = bu
 
     window = Tk()
     window["bg"] = "black"
