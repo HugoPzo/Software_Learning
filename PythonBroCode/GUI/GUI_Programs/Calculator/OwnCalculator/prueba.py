@@ -1,6 +1,8 @@
-from Buttons import buttons
 from tkinter import *
 
+
+TOTAL_WIDTH = 40
+TOTAL_HEIGHT = 5
 
 def create_gui():
     window = Tk()
@@ -14,40 +16,48 @@ def create_gui():
 
 WINDOW = create_gui()
 
+def create_frame(window):
+    frame = Frame(window)
+    frame.pack(side=TOP)
+    
+
 
 def button_click(num):
 
     labelText = StringVar()
     labelText.set(num)
-    label = Label(WINDOW, textvariable=labelText)
+    label = Label(WINDOW, textvariable=labelText, fg="#0F0", bg="#000")
     WINDOW.after(1)
     label.pack(side=TOP)
     print(num)
 
 
-def create_label(window, button):
-    label = Label(window, background="#000", fg="#0F0", text=button)
-    label.pack(side=TOP)
-    return label
-
-
-def create_frame(window):
-    frame = Frame(window)
-
-
 def create_buttons(frame):
-    buttonsText = [7, 8, 9, "/", 4, 5, 6, "*", 1, 2, 3, "-", 0, ".", "+", "="]
+    WIDTH = 9
+    HEIGHT = 5
+    buttonsText = [[7, 8, 9, "/"], [4, 5, 6, "*"], [1, 2, 3, "-"], [".", 0, "C", "+"], ["="]]
 
-    for buttonText in buttonsText:
-        #                              Assign the value before it pack it
-        button = Button(frame, text=buttonText, command=lambda i=buttonText:button_click(i))
-        button.pack()
+    row = 0
+    for rows in buttonsText:
+        column = 0
+        for columns in rows:
+            #                              Assign the value before it pack it
+            button = Button(frame, text=columns, width=WIDTH, height=HEIGHT, command=lambda i=columns:button_click(i))
+            if columns != "=":
+                button.grid(row=row, column=column)
+            else:
+                button.grid(row=row, columnspan=4)
+                button.config(width=40)
+                
+            column += 1
+            
+        row += 1
 
     return button
 
 def main():
     frame = create_frame(WINDOW)
-    button = create_buttons(frame)
+    create_buttons(frame)
     WINDOW.mainloop()
 
 if __name__ == "__main__":

@@ -1,32 +1,63 @@
-from Buttons import buttons
 from tkinter import *
 
+
+TOTAL_WIDTH = 40
+TOTAL_HEIGHT = 5
+
+def create_gui():
+    window = Tk()
+    window.title("Hugo's Calculator")
+    window.geometry("500x500")
+    window.config(bg="#000")
+    logoImage = PhotoImage(file="logoCalc.png")
+    window.iconphoto(True, logoImage)
+
+    return window
+
+WINDOW = create_gui()
+
+def create_frame(window):
+    frame = Frame(window)
+    frame.grid(row=1, column=0)
+    
+
+
 def button_click(num):
+
+    labelText = StringVar()
+    labelText.set(num)
+    label = Label(WINDOW, textvariable=labelText, fg="#0F0", bg="#000")
+    WINDOW.after(1)
+    label.grid(row=0, column=0)
     print(num)
 
 
-# Window Configuration
-window = Tk()
-window.title("Hugo's Calculator")
-window.geometry("500x500")
+def create_buttons(frame):
+    WIDTH = 9
+    HEIGHT = 5
+    buttonsText = [[7, 8, 9, "/"], [4, 5, 6, "*"], [1, 2, 3, "-"], [".", 0, "C", "+"], ["="]]
 
-# Logo GUI
-logo = PhotoImage(file="logoCalc.png")
-window.iconphoto(True, logo)
+    row = 0
+    for rows in buttonsText:
+        column = 0
+        for columns in rows:
+            #                              Assign the value before it pack it
+            button = Button(frame, text=columns, width=WIDTH, height=HEIGHT, command=lambda i=columns:button_click(i))
+            if columns != "=":
+                button.grid(frame, row=row, column=column)
+            else:
+                button.grid(columnspan=TOTAL_WIDTH)
+                button.config(width=40)
+            column += 1
+            
+        row += 1
 
-# Frame dentro de Window
-frame = Frame(window)
+    return button
 
-# Frame Buttons
-buttons = [7, 8, 9, "/", 4, 5, 6, "*", 1, 2, 3, "-", 0, ".", "+", "="]
-WIDTH = 8
-HEIGHT = 4
+def main():
+    frame = create_frame(WINDOW)
+    button = create_buttons(frame)
+    WINDOW.mainloop()
 
-for button in buttons:
-        
-    createButton = Button(frame, width=WIDTH, height=HEIGHT, command=lambda: button_click(button))
-    createButton.pack()
-
-frame.pack()
-
-window.mainloop()
+if __name__ == "__main__":
+    main()
