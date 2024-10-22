@@ -1,0 +1,38 @@
+body{
+    font-family: sans-serif;
+    margin: 0;
+}
+
+.grid{
+    display: grid;
+
+    /* Tamaño Elementos */
+
+    /* Tamaño Width */   /* auto -> Estira completament el grid */
+                        /* fr -> Ocupa todo el ancho disponible sin tomar en cuenta el contenido, a menos que el contenido del interior crezca 
+                        divide exactamente igual los items
+                        Funciona igual que flex-grow.
+                        2fr + 5fr + 1fr = 8fr
+                        
+                        SE USA MAS 'fr' USAR*/
+    /* grid-template-columns: columna1 columna2 columna3 etc...; */
+    grid-template-columns: auto 30% 1fr;
+    /* Tamaño Height */
+    height: 80vh;
+    /* grid-template-rows: fila1 fila2 fila3 etc...; */
+    grid-template-rows: 30% auto 90%;
+
+}
+
+
+/* Estilos de los items dentro del grid */
+.grid-item{
+    background-color: #a21;
+    font-size: 25px;
+    color: #fff;
+
+    /* Los margenes no colapsan con 'grid' */
+    margin: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+}

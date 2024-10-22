@@ -41,7 +41,7 @@ p{
 /* Se aplica a todos los contenedores */
 @container (max-width: 500px){
     p{
-        font-size: 20px;
+        font-size: 10px;
     }
 }
 
