@@ -1,0 +1,55 @@
+body{
+    margin: 0;
+    font-family: sans-serif;
+}
+
+div, body{
+    box-sizing: border-box;
+}
+
+.grid{
+    display: grid;
+    padding: 20px;
+
+    
+    /* auto-fit -> Crea una columna si el espacio lo permite (Adapta las columnas) */
+    /* auto-fill -> Rellena de columnas cuando hay pocos elementos */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-rows: repeat(3, 1fr);
+    gap: 20px;
+
+    grid-auto-rows: 1fr;
+    
+    height: 80vh;
+}
+
+.grid__item{
+
+    background-image: url("../img/cr7.webp");
+    background-size: cover;
+    border-radius: 10px;
+
+}
+
+.grid__item:first-child{
+
+    /* ¡ Posicionamiento de las lineas verticales y horizontales !*/
+
+    /* grid-columns: Comienzo_linea_horizontal / Fin_linea_horizontal*/
+    /* grid-row: Comienzo_linea_vertical / Fin_linea_vertical*/
+                    /* span 2 -> Espacios que va a ocupar */
+                    /* grid-column&row: span 2; -> Dentro de la misma fila-columna */
+    grid-column: 3/span 2;
+    grid-row: 2/span 2;
+}
+
+.grid-item:hover{
+    opacity: 0.7;
+}
+
+
+@media screen and (max-width:500px) {
+    .grid{
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    }
+}

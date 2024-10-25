@@ -1,0 +1,67 @@
+body{
+    font-family: sans-serif;
+    margin: 0;
+}
+
+div, body{
+    box-sizing: border-box;
+}
+
+.grid{
+
+    border: 20px solid #000;
+
+    display: grid;
+
+    /* Tamaño Elementos */
+
+    /*                     repeat(cantidad_de_repeticiones, tamaño) */
+    /*                     minmax(tamaño_minimo, tamaño_maximo) */
+    grid-template-columns: repeat(3, 1fr);
+    /* grid-template-columns: repeat(2, minmax(100px, 200px)) 2fr; */
+    /* grid-template-columns: 200px repeat(3, 1fr) 200px; */
+    /*         REPETIR PATRONES                  */
+    /* grid-template-columns: repeat(3, 1fr 2fr) */
+    grid-template-rows: repeat(3, 1fr);
+
+    /* Tamaño Height */
+    height: 80vh;
+
+
+    /* Estilos Implicitos */
+
+    /* Se cambia la direccion en que se crean nuevos elementos Implicitos */
+    grid-auto-flow: column;
+
+    /* Estos estilos se veran afectados dependiendo de la direccion dada 
+    (grid-auto-flow: column-row); */
+    /* Dar estilo a todas las filas que no tienen un estilo definido */
+    grid-auto-rows: 200px;
+
+    grid-auto-columns: 50px;
+
+
+    /* Separacion entre columnas */
+    /* column-gap: 10px; */
+    /* Separacion entre filas */
+    /* row-gap: 20px; */
+
+    /* gap: row column */
+    /* gap: 20px; -> Ambos con la misma separacion*/ 
+    gap: 30px 20px  ;
+
+    /* Separacion entre container y elementos */
+    padding: 20px;
+
+}
+
+
+/* Estilos de los items dentro del grid */
+.grid-item{ 
+    background-color: #a21;
+    font-size: 25px;
+    color: #fff;
+
+    /* Los margenes no colapsan con 'grid' */
+    padding: 10px;
+}

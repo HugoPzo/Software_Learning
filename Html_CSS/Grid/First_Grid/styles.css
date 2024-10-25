@@ -8,17 +8,21 @@ body{
 
     /* Tamaño Elementos */
 
-    /* Tamaño Width */   /* auto -> Estira completament el grid */
-                        /* fr -> Ocupa todo el ancho disponible sin tomar en cuenta el contenido, a menos que el contenido del interior crezca 
+    /* Tamaño Width */   /* auto -> Estira completamente el grid */
+                        /*   -> Ocupa todo el ancho disponible sin tomar en cuenta el contenido, a menos que el contenido del interior crezca 
                         divide exactamente igual los items
                         Funciona igual que flex-grow.
                         2fr + 5fr + 1fr = 8fr
                         
                         SE USA MAS 'fr' USAR*/
+    /* Definimos cuantas columnas deseamos */
     /* grid-template-columns: columna1 columna2 columna3 etc...; */
+    /*                        auto -> Se ajusta al contenido */
+    /*                        fr -> Divide la medida (fraction) (fraccion de espacio disponible)*/
     grid-template-columns: auto 30% 1fr;
     /* Tamaño Height */
     height: 80vh;
+    /* Definimos cuantas filas deseamos */
     /* grid-template-rows: fila1 fila2 fila3 etc...; */
     grid-template-rows: 30% auto 90%;
 
@@ -26,7 +30,7 @@ body{
 
 
 /* Estilos de los items dentro del grid */
-.grid-item{
+.grid-item{ 
     background-color: #a21;
     font-size: 25px;
     color: #fff;

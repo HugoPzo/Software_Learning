@@ -1,0 +1,51 @@
+body{
+    margin: 0;
+    font-family: sans-serif;
+}
+
+div, body{
+    box-sizing: border-box;
+}
+
+.grid{
+    display: grid;
+    padding: 20px;
+
+    
+    /* auto-fit -> Crea una columna si el espacio lo permite (Adapta las columnas) */
+    /* auto-fill -> Rellena de columnas cuando hay pocos elementos */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-rows: repeat(3, 1fr);
+    gap: 20px;
+
+    /* Es posible que el grid se rompa conforme al tamaño de pantalla */
+    /* Rellena los espacios vacios con los elementos - > IMPORTANTE */
+    grid-auto-flow: dense;
+
+    grid-auto-rows: 1fr;
+    
+    height: 100vh;
+}
+
+.grid__item{
+
+    background-image: url("../img/cr7.webp");
+    background-size: cover;
+    border-radius: 10px;
+
+}
+
+.grid__item:nth-child(10){
+    grid-column: span 4;
+}
+
+.grid-item:hover{
+    opacity: 0.7;
+}
+
+
+@media screen and (max-width:500px) {
+    .grid{
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    }
+}
