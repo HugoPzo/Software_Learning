@@ -1,7 +1,7 @@
 from tkinter import *
 
 TOTAL_WIDTH = 300
-TOTAL_HEIGHT = 537
+TOTAL_HEIGHT = 528
 
 
 def create_gui():
@@ -19,23 +19,22 @@ WINDOW = create_gui()
 
 
 def create_label_frame(window):
-    frame = Frame(window, width=TOTAL_WIDTH, height=100, relief="ridge", border="5")
+    frame = Frame(window, relief="ridge", border="5", )
+    # Make global 'variable'
+    global labelText
+    labelText = StringVar()
+    label = Label(frame, textvariable=labelText, fg="#0F0", bg="#000", width="40", height="5")
+    label.pack()
     frame.pack(side=TOP)
-    return frame
+    frame.after(1)
 
 
 def button_click(num):
-    frame = create_label_frame(WINDOW)
-    frame.after(1)
-
-    labelText = StringVar()
-    labelText.set(num)
-
-    label = Label(frame, textvariable=labelText, fg="#0F0", bg="#000", width=TOTAL_WIDTH, height="100")
-
-    label.pack(side=TOP)
-
-    print(num)
+    number = str(num)
+    operation = ""
+    operation += number
+    print(operation)
+    labelText.set(operation)
 
 
 def create_frame(window):
@@ -45,8 +44,8 @@ def create_frame(window):
 
 
 def create_buttons(frame):
-    WIDTH = 9
-    HEIGHT = 5
+    BUTTON_WIDTH = 9
+    BUTTON_HEIGHT = 5
     buttonsText = [[7, 8, 9, "/"], [4, 5, 6, "*"], [1, 2, 3, "-"], [".", 0, "C", "+"], ["="]]
 
     row = 0
@@ -54,7 +53,7 @@ def create_buttons(frame):
         column = 0
         for columns in rows:
             #                              Assign the value before it pack it
-            button = Button(frame, text=columns, width=WIDTH, height=HEIGHT, fg="#0F0", bg="#000",
+            button = Button(frame, text=columns, width=BUTTON_WIDTH, height=BUTTON_HEIGHT, fg="#0F0", bg="#000",
                             command=lambda i=columns: button_click(i))
             if columns != "=":
                 button.grid(row=row, column=column)

@@ -27,11 +27,45 @@ def create_label_frame(window):
     frame.pack(side=TOP)
     frame.after(1)
 
+# Global Variables must been declared, and then use 'global' expression to call them
+equation_text = ""
+MENSAJE_ERROR = "SINTAX ERROR"
 
 def button_click(num):
-    print(num)
-    labelText.set(num)
+    global equation_text
 
+    equation_text = equation_text + str(num)
+
+    labelText.set(equation_text)
+
+def equals():
+    global equation_text
+
+    try:
+
+        total = str(eval(equation_text))
+
+        labelText.set(total)
+
+        equation_text = total
+
+    except SyntaxError:
+
+        labelText.set(MENSAJE_ERROR)
+        equation_text = ""
+
+    except ZeroDivisionError    :
+
+        labelText.set(MENSAJE_ERROR)
+        equation_text = ""
+
+def clear():
+
+    global equation_text
+
+    labelText.set("")
+
+    equation_text = ""
 
 
 def create_frame(window):
@@ -52,11 +86,15 @@ def create_buttons(frame):
             #                              Assign the value before it pack it
             button = Button(frame, text=columns, width=BUTTON_WIDTH, height=BUTTON_HEIGHT, fg="#0F0", bg="#000",
                             command=lambda i=columns:button_click(i))
-            if columns != "=":
+            if columns == "C":
+                button.grid(row=row, column=column)
+                button.config(command=clear)
+            elif columns != "=":
                 button.grid(row=row, column=column)
             else:
                 button.grid(row=row, columnspan=4)
                 button.config(width=40)
+                button.config(command=equals)
                 
             column += 1
             
