@@ -1,7 +1,7 @@
 from tkinter import *
 
 TOTAL_WIDTH = 300
-TOTAL_HEIGHT = 528
+TOTAL_HEIGHT = 566
 
 
 def create_gui():
@@ -9,8 +9,6 @@ def create_gui():
     window.title("Hugo's Calculator")
     window.geometry(f"{TOTAL_WIDTH}x{TOTAL_HEIGHT}")
     window.config(bg="#000")
-    logoImage = PhotoImage(file="logoCalc.png")
-    window.iconphoto(True, logoImage)
 
     return window
 
@@ -23,7 +21,7 @@ def create_label_frame(window):
     # Make global 'variable'
     global labelText
     labelText = StringVar()
-    label = Label(frame, textvariable=labelText, fg="#0F0", bg="#000", width="40", height="5")
+    label = Label(frame, textvariable=labelText, fg="#0F0", bg="#000", width="40", height="5", font=("Arial", 15))
     label.pack()
     frame.pack(side=TOP)
     frame.after(1)

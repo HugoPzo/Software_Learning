@@ -18,4 +18,15 @@
             #   -i icon.ico     (adds custom icon to .exe) (Must be ".ico")
             #   file_name.py    (name of main python file)
 
-#   .exe is located in the dist folder  ------
+#   .exe is located in the dist folder  ------ IMPORTANT
+
+
+
+# PROBLEM SOLUTION
+
+# The 'typing' package is an obsolete backport of a standard library package and is incompatible with PyInstaller. Please remove this package (located in C:\Users\hugop\AppData\Roaming\Python\Python311\site-packages) using
+#     "C:\Program Files\Python311\python.exe" -m pip uninstall typing
+# then try again.
+
+# USE
+    # pip uninstall typing

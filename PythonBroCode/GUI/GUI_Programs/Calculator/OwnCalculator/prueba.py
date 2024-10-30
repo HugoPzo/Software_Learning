@@ -2,7 +2,7 @@ from tkinter import *
 
 
 TOTAL_WIDTH = 300
-TOTAL_HEIGHT = 528
+TOTAL_HEIGHT = 566
 
 def create_gui():
     window = Tk()
@@ -22,7 +22,7 @@ def create_label_frame(window):
     # Make global 'variable'
     global labelText
     labelText = StringVar()
-    label = Label(frame, textvariable=labelText, fg="#0F0", bg="#000", width="40", height="5")
+    label = Label(frame, textvariable=labelText, fg="#0F0", bg="#000", width="40", height="5", font=("Arial", 15))
     label.pack()
     frame.pack(side=TOP)
     frame.after(1)
