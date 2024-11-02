@@ -1,6 +1,6 @@
 import random
+import time
 from tkinter import *
-
 
 
 def next_turn(row, column):
@@ -18,7 +18,7 @@ def next_turn(row, column):
                 buttons_used.append(buttons[row][column])
                 print(buttons_used)
                 player_text.config(text="Computer turn")
-
+                computer_play()
 
             elif check_winner() is True:
                 player_text.config(text="You win!!")
@@ -26,38 +26,39 @@ def next_turn(row, column):
             elif check_winner() == "Tie":
                 player_text.config(text="Tie!!")
 
-        else:
-
-            button_chosen = False
-            while button_chosen == False:
-
-                random_row = random.randint(0, 2)
-                random_column = random.randint(0, 2)
-                computer_button = buttons[random_row][random_column]
-
-                print(computer_button)
-
-                if computer_button not in buttons_used:
-
-                    computer_button['text'] = player
-
-                    if check_winner() is False:
-                        player = user
-                        buttons_used.append(computer_button)
-                        print(buttons_used)
-                        player_text.config(text="User turn")
-
-
-                    elif check_winner() is True:
-                        player_text.config(text=f"Computer wins!!")
-
-                    elif check_winner() == "Tie":
-                        player_text.config(text="Tie!!")
-
-                    button_chosen = True
 
 
 
+def computer_play():
+
+    global player
+
+    button_chosen = False
+    while button_chosen == False:
+
+        random_row = random.randint(0, 2)
+        random_column = random.randint(0, 2)
+        computer_button = buttons[random_row][random_column]
+
+
+        if computer_button not in buttons_used:
+
+            computer_button['text'] = player
+
+            if check_winner() is False:
+                player = user
+                buttons_used.append(computer_button)
+                print(buttons_used)
+                player_text.config(text="User turn")
+
+
+            elif check_winner() is True:
+                player_text.config(text="Computer wins!!")
+
+            elif check_winner() == "Tie":
+                player_text.config(text="Tie!!")
+
+            button_chosen = True
 
 
 def check_winner():
@@ -99,6 +100,7 @@ def check_winner():
 
 
 def empty_spaces():
+
     spaces = 9
 
     for row in range(3):
@@ -112,6 +114,8 @@ def empty_spaces():
 
 
 def new_game():
+    global buttons_used
+    buttons_used = []
     for row in range(3):
         for column in range(3):
             buttons[row][column].config(text="", bg="#000")
@@ -132,8 +136,8 @@ y = int((window.winfo_screenheight() / 2) - (WINDOW_HEIGHT / 2))
 window.geometry(f"+{x}+{y}")
 
 players = ["X", "O"]
-player = random.choice(players)
 user = players[0]
+player = user
 computer = players[1]
 
 
@@ -160,6 +164,6 @@ for row in range(3):
                                       command=lambda row=row, column=column: next_turn(row, column))
         buttons[row][column].grid(row=row, column=column)
 
-print(buttons)
+
 
 window.mainloop()

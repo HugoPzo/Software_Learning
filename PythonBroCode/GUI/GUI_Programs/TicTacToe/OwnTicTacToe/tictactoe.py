@@ -1,5 +1,7 @@
 import random
+import time
 from tkinter import *
+
 
 def next_turn(row, column):
 
@@ -7,38 +9,64 @@ def next_turn(row, column):
 
     if buttons[row][column]['text'] == "" and check_winner() is False:
 
-        if player == players[0]:
+        if player == user:
 
             buttons[row][column]['text'] = player
 
             if check_winner() is False:
-                player = players[1]
-                player_text.config(text=f"{player} turn")
+                player = computer
+                buttons_used.append(buttons[row][column])
+                print(buttons_used)
+                player_text.config(text="Computer turn")
+                computer_play()
 
             elif check_winner() is True:
-                player_text.config(text=f"{player} wins!!")
+                player_text.config(text="You win!!")
 
             elif check_winner() == "Tie":
                 player_text.config(text="Tie!!")
 
-        else:
 
-            buttons[row][column]["text"] = player
+
+# Computer Choice
+def computer_play():
+
+    global player
+
+    # Loop until available button be chosed
+    button_chosen = False
+    while button_chosen == False:
+
+        random_row = random.randint(0, 2)
+        random_column = random.randint(0, 2)
+        computer_button = buttons[random_row][random_column]
+
+        # If Button is available enter
+        if computer_button not in buttons_used:
+
+            computer_button['text'] = player
 
             if check_winner() is False:
-                player = players[0]
-                player_text.config(text=f"{player} turn")
+                player = user
+                buttons_used.append(computer_button)
+                player_text.config(text="User turn")
+
+
             elif check_winner() is True:
-                player_text.config(text=f"{player} wins!!")
+                player_text.config(text="Computer wins!!")
+
             elif check_winner() == "Tie":
                 player_text.config(text="Tie!!")
+
+            button_chosen = True
 
 
 def check_winner():
-    global player
+    # Check all possible combinations, and different than empty("") text
 
     for row in range(3):
         if buttons[row][0]['text'] == buttons[row][1]['text'] == buttons[row][2]['text'] != "":
+            # Color buttons
             buttons[row][0].config(bg="#0F0")
             buttons[row][1].config(bg="#0F0")
             buttons[row][2].config(bg="#0F0")
@@ -64,16 +92,20 @@ def check_winner():
         return True
 
     elif empty_spaces() is False:
+        # Color them if tie
         for row in range(3):
             for column in range(3):
                 buttons[row][column].config(bg="#A21")
         return "Tie"
 
     else:
+        # Return False unitil there is a winner
         return False
 
 
 def empty_spaces():
+    # Check if there are empty spaces for Tie
+
     spaces = 9
 
     for row in range(3):
@@ -81,13 +113,17 @@ def empty_spaces():
             if buttons[row][column]['text'] != "":
                 spaces -= 1
 
-    print(spaces)
+    # Return False when there aren't empty spaces
     if spaces == 0:
         return False
 
 
-
 def new_game():
+    # Clear all for a new game
+    global buttons_used
+    global player
+    player = user
+    buttons_used = []
     for row in range(3):
         for column in range(3):
             buttons[row][column].config(text="", bg="#000")
@@ -108,7 +144,9 @@ y = int((window.winfo_screenheight() / 2) - (WINDOW_HEIGHT / 2))
 window.geometry(f"+{x}+{y}")
 
 players = ["X", "O"]
-player = random.choice(players)
+user = players[0]
+player = user
+computer = players[1]
 
 
 player_text = Label(window, text=f"'{player}' Turn", font=("Constantia", 25), pady=10, padx=10, bg="#000", fg="#0F0")
@@ -124,15 +162,17 @@ buttons_frame.pack()
 buttons = [[0, 0, 0],
            [0, 0, 0],
            [0, 0, 0]]
+buttons_used = []
 
 for row in range(3):
     for column in range(3):
         # Each (x, y) has his button
+        # lambda -> Send two variables to the function, the row(x) and column(y) of each buttona
         buttons[row][column] = Button(buttons_frame, font=("Constantia", 10),
                                       width=14, height=8, bg="#000", fg="#0F0",
                                       command=lambda row=row, column=column: next_turn(row, column))
         buttons[row][column].grid(row=row, column=column)
 
-print(buttons)
+
 
 window.mainloop()
