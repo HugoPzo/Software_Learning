@@ -86,8 +86,8 @@ def create_buttons(frame):
         column = 0
         for columns in rows:
             #                              Assign the value before it pack it
-            button = Button(frame, text=columns, width=BUTTON_WIDTH, height=BUTTON_HEIGHT, fg="#0F0", bg="#000",
-                            command=lambda i=columns: button_click(i))
+            button = Button(frame, text=columns, width=BUTTON_WIDTH, height=BUTTON_HEIGHT,
+                            fg="#0F0", bg="#000", command=lambda i=columns: button_click(i))
             if columns == "C":
                 button.grid(row=row, column=column)
                 button.config(command=clear)
