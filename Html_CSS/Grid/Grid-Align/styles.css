@@ -1,0 +1,99 @@
+body{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+.grid{
+    display: grid;
+
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 200px);
+
+    padding: 10px;
+    gap: 20px;
+
+
+    /* EJE HORIZONTAL */
+    /* ALINEACION DENTRO DE LA CELDA */
+    /* Alinear dentro de la celda
+    NO ESTAMOS MOVIENDO LA CELDA */
+
+    justify-items: self-start;
+    /*              end
+                    self-end
+                    start
+                    center
+                    right
+                    left
+                    stretch -> default
+                    baseline
+                    first baseline*/
+
+    /* Trabaja de la mano con 'direction' */
+    /* direction: rtl; */
+
+    /* ALINEACION DE LAS CELDAS */
+    justify-content: space-around;
+    /*              space-between
+                    space-evenly
+                    space-around
+                    end
+                    self-end
+                    start
+                    center
+                    right -> Siempre a la derecha
+                    left
+                    stretch -> default
+                    baseline
+                    first baseline*/
+
+    /* EJE VERTICAL */
+    align-items: center;
+    /*              
+                    end
+                    self-end
+                    start
+                    center
+                    right -> Siempre a la derecha
+                    left
+                    stretch -> default
+                    baseline
+                    first baseline*/
+
+    align-content: space-between;
+    /*              space-between
+                    space-evenly
+                    space-around
+                    end
+                    self-end
+                    start
+                    center
+                    right -> Siempre a la derecha
+                    left
+                    stretch -> default
+                    baseline
+                    first baseline*/
+}
+
+.grid__items:nth-child(2){
+    /* Alineacion propia del elemento */
+    justify-self: center;
+    align-self: end;
+
+
+    background-color: #a21;
+}
+
+.grid__items{
+    background: #48e;
+    color: #aaa;
+    font-size: 60px;
+    max-width: 100%;
+    border-radius: 16px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}

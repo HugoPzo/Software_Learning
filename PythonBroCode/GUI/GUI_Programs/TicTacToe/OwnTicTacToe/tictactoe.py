@@ -142,6 +142,9 @@ x = int((window.winfo_screenwidth() / 2) - (WINDOW_WIDTH / 2))
 y = int((window.winfo_screenheight() / 2) - (WINDOW_HEIGHT / 2))
 
 window.geometry(f"+{x}+{y}")
+# Not resize the window
+window.resizable(False, False)
+
 
 players = ["X", "O"]
 user = players[0]
