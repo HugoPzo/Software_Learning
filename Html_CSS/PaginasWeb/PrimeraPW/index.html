@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FIRST WEB PAGE</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+
+        <input type="checkbox" id="open-menu" class="header__checkbox">
+        <!-- role= Sistema de accesibilidad -->
+        <label for="open-menu" class="header__open-nav-button" role="button">=</label>
+
+        
+        <div>
+            <img class="header__logo" src="./IMG/Logo.png" alt="Log">
+        </div>
+
+        <nav class="header__nav">
+            <ul class="header__nav-list">
+                <li class="header__nav-item"><a href="#">About</a></li>
+                <li class="header__nav-item"><a href="#">Portfolio</a></li>
+                <li class="header__nav-item"><a href="#">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="profile">
+        <div class="profile__wrapper">
+            <div class="profile__img-container">
+                <img src="./IMG/CristianoRonaldo.jpg" alt="Cristiano Ronaldo" class="profile__img">
+            </div>
+            <div class="profile__data-container">
+                <div class="profile__data">
+                    <div class="profile__description">
+                        <h1>¿Quién es Hugo Perez?</h1>
+                        <p>
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores nihil eos labore, consectetur beatae autem repellat commodi nesciunt molestiae facere voluptate earum necessitatibus sunt illo nostrum dolorum iusto sequi sed?
+                        </p>
+                    </div>
+                    <div class="profile__skills-container">
+                        <h2>SKILLS</h2>
+                        <ul>
+                            <li class="profile__skill">
+                                <div class="load-bar">
+                                    <div class="load-bar__bar bar--80">80%</div>
+                                </div>
+                                <span class="profile__skill-name">HTML</span>
+                            </li>
+                            <li class="profile__skill">
+                                <div class="load-bar">
+                                    <div class="load-bar__bar bar--70">80%</div>
+                                </div>
+                                <span class="profile__skill-name">HTML</span>
+                            </li>
+                            <li class="profile__skill">
+                                <div class="load-bar">
+                                    <div class="load-bar__bar bar--50">80%</div>
+                                </div>
+                                <span class="profile__skill-name">HTML</span>
+                            </li>
+                            <li class="profile__skill">
+                                <div class="load-bar">
+                                    <div class="load-bar__bar bar--80">80%</div>
+                                </div>
+                                <span class="profile__skill-name">HTML</span>
+                            </li>
+                            <li class="profile__skill">
+                                <div class="load-bar">
+                                    <div class="load-bar__bar bar--50">80%</div>
+                                </div>
+                                <span class="profile__skill-name">HTML</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </main>
+    
+
+</body>
+</html>
