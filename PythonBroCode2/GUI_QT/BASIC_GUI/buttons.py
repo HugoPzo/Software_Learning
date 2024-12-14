@@ -4,6 +4,10 @@ from PyQt5.QtWidgets import (QApplication, QMainWindow,
                             # Button Import
 
 
+## --------------------  
+#   Widget.*signal*.connect(*slot*)
+## --------------------
+
 # Widget = Button, Label, etc...
 
 class MainWindow(QMainWindow):
