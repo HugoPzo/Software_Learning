@@ -1,6 +1,5 @@
-from pathlib import Path, PureWindowsPath
+from pathlib import Path
 from os import system
-import shutil
 import os
 
 system("cls")
@@ -13,6 +12,27 @@ print(f"¡¡¡Bienvenido '{usuario.upper()}'!!!")
 print("******************************************************\n")
 
 PATH = Path(f"{Path.home()}/OneDrive/Escritorio/Software_Learning/Udemy/Python16Dias/Dia6/Proyecto/Recetas")
+
+# Ask if user wants to continue
+def running():
+
+    print("\n")
+    answer = False
+    answers = ["y", "n"]
+
+    while not answer:
+        user_answer = input("Deseas realizar otra consulta? [y/n]: ").lower()
+
+        if user_answer not in answers:
+            system("cls")
+            print("Only [y/n]")
+            continue
+
+        if user_answer == "y":
+            answer = True
+            main()
+        else:
+            answer = True
 
 
 # Contador de todas las recetas dentro del directorio
@@ -36,21 +56,16 @@ def escoger_categoria(path):
 
         print("Categorias Disponibles: ".upper())
         for indice, nombre_receta in enumerate(path.glob("*")):
+            indice = str(indice)
             print(f"[{indice}]", nombre_receta.stem)
             categorias[indice] = nombre_receta
 
-        user_option = int(input("Choose an option: "))
+        user_option = input("Choose an option: ").lower()
         
-        if user_option not in range(0, len(categorias)):
-            system("cls")
-            print("Enter a valid option!")
-            continue
-
-        ruta_categoria = categorias[user_option]
-
-        choose_categoria = True
-
-    return ruta_categoria
+        if user_option in categorias:
+            return categorias[user_option]
+        else:
+            print("Invalid option, please try again.")
 
 # Funcion que permite escoger una receta y devuelve su 'Path'
 def escoger_receta(ruta_categoria):
@@ -60,46 +75,44 @@ def escoger_receta(ruta_categoria):
     choose_receta = False
     # Loop until a recipe has been chosen 
     while not choose_receta:
-        try:
-            # Print all recipes (basename of)
-            print(f"*{os.path.basename(ruta_categoria).upper()}*")
-            print("ESCOGE UNA RECETA")
-
-            recetas = {}
-            
-            for indice, receta in enumerate(ruta_categoria.glob("*")):
-                print(f"[{indice}]", receta.stem)
-                recetas[indice] = receta
-
-            user_option = int(input("Choose an option: "))
-                
-            if user_option not in range(0, len(recetas)):
-                system("cls")
-                print("Enter a valid option!")
-                continue
-            
-            system("cls")
-
-            ruta_receta = Path(recetas[user_option]) 
-
-            choose_receta = True
-
-            return ruta_receta
         
-        except ValueError:
-            system("cls")
-            print("Enter a valid option!")
+        # Print all recipes (basename of)
+        print(f"*{os.path.basename(ruta_categoria).upper()}*")
+        print("ESCOGE UNA RECETA")
+
+        recetas = {}
+        recetas_list = list(ruta_categoria.glob("*.txt"))
+        
+        if not recetas_list:
+            print("No hay recetas en esta categoria.")
+            return running()
+
+        for indice, receta in enumerate(recetas_list):
+            indice = str(indice)
+            print(f"[{indice}]", receta.stem)
+            recetas[indice] = receta
+
+        user_option = input("Choose an option: ".upper()).lower()
+            
+        if user_option in recetas:
+            return recetas[user_option]
+        else:
+            print("Invalid option, please try again.")
+        
+        
 
 # Options -------------------------------------------------------------
 # Read Recipe
 def option_one(path):
     # Category Path
-    ruta_categoria = escoger_categoria(path)
+    ruta_categoria = escoger_categoria(path)    
     # Recipe Path
     receta = escoger_receta(ruta_categoria)
     # Read text with the recipe path
     print(receta.read_text())
-    
+
+    running()
+
 # Create New Recipe
 def option_two(path):
     ruta_categoria = escoger_categoria(path)
@@ -130,6 +143,8 @@ def option_two(path):
 
     print(f"{ruta_receta} has been created.")
 
+    running()
+
 # Create New Category
 def option_three(path):
     system("cls")
@@ -154,6 +169,8 @@ def option_three(path):
             system("cls")
             print("ESA CATEGORIA YA EXISTE.")
 
+    running()
+
 # Delete recipe
 def option_four(path):
     ruta_categoria = escoger_categoria(path)
@@ -163,6 +180,8 @@ def option_four(path):
 
     print(f"{receta} has been deleted.")
 
+    running()
+
 # Delete category
 def option_five(path):
     
@@ -171,7 +190,9 @@ def option_five(path):
         
         os.remove(ruta_categoria)   
 
-        print(f"{ruta_categoria} has been deleted.")   
+        print(f"{ruta_categoria} has been deleted.")  
+
+        running() 
         
     except PermissionError as error:
         system("cls")
@@ -179,14 +200,17 @@ def option_five(path):
         print(error)
 
 
+
 # Main ---------------------------------------------------------------
 def main():
+    system("cls")
     print(f"""Ruta de Recetas: '{str(PATH)}'""")    
     contador_recetas(PATH)
 
     user_option = False
 
     while not user_option:
+        
         try:
             print("[1] Leer Receta \n[2] Crear Receta \n[3] Crear Categoria \n[4] Eliminar Receta \n[5] Eliminar Categoria \n[6] Exit\n")
             user_option = int(input("Choose an option: "))
