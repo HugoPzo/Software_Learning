@@ -1,17 +1,31 @@
 from pathlib import Path
+from sys import platform
 from os import system
 import os
 
-system("cls")
+# Check operating system to clean terminal
+def check_system_clean():
+    # Linux or OS
+    if platform == "linux" or platform == "linux2" or platform == "darwin":
+        return system("clear")
+    # Windows
+    elif platform == "win32":
+        return system("cls")
+
+    system("cls")
+
 usuario = os.getlogin()
 
+check_system_clean()
 
 print("******************************************************")
 # User Welcome
 print(f"¡¡¡Bienvenido '{usuario.upper()}'!!!")
 print("******************************************************\n")
 
-PATH = Path(f"{Path.home()}/OneDrive/Escritorio/Software_Learning/Udemy/Python16Dias/Dia6/Proyecto/Recetas")
+PATH = Path(os.getcwd()) / "Recetas"
+
+
 
 # Ask if user wants to continue
 def running():
@@ -24,7 +38,7 @@ def running():
         user_answer = input("Deseas realizar otra consulta? [y/n]: ").lower()
 
         if user_answer not in answers:
-            system("cls")
+            check_system_clean()
             print("Only [y/n]")
             continue
 
@@ -33,7 +47,6 @@ def running():
             main()
         else:
             answer = True
-
 
 # Contador de todas las recetas dentro del directorio
 def contador_recetas(path):
@@ -47,7 +60,7 @@ def contador_recetas(path):
 
 # Funcion que permite escoger una categoria y devuelve su 'Path'
 def escoger_categoria(path):
-    system("cls")
+    check_system_clean()
     
     choose_categoria = False
 
@@ -67,10 +80,11 @@ def escoger_categoria(path):
         else:
             print("Invalid option, please try again.")
 
+
 # Funcion que permite escoger una receta y devuelve su 'Path'
 def escoger_receta(ruta_categoria):
     # Read Recipe
-    system("cls")
+    check_system_clean()
     
     choose_receta = False
     # Loop until a recipe has been chosen 
@@ -99,7 +113,6 @@ def escoger_receta(ruta_categoria):
         else:
             print("Invalid option, please try again.")
         
-        
 
 # Options -------------------------------------------------------------
 # Read Recipe
@@ -117,7 +130,7 @@ def option_one(path):
 def option_two(path):
     ruta_categoria = escoger_categoria(path)
 
-    system("cls")
+    check_system_clean()
     receta_created = False
     
     while not receta_created:
@@ -128,11 +141,11 @@ def option_two(path):
         ruta_receta = Path(f"{ruta_categoria}/{recipe_name}.txt")
 
         if ruta_receta.exists():
-            system("cls")
+            check_system_clean()
             print("Esa receta ya existe!!".upper())
             continue
         
-        system("cls")
+        check_system_clean()
 
         print("INGRESA EL TEXTO QUE IRA DENTRO DE LA RECETA.")
         text_in_recipe = input("")
@@ -147,7 +160,7 @@ def option_two(path):
 
 # Create New Category
 def option_three(path):
-    system("cls")
+    check_system_clean()
 
     categoria_created = False
 
@@ -166,7 +179,7 @@ def option_three(path):
             categoria_created = True
 
         except FileExistsError:
-            system("cls")
+            check_system_clean()
             print("ESA CATEGORIA YA EXISTE.")
 
     running()
@@ -195,15 +208,14 @@ def option_five(path):
         running() 
         
     except PermissionError as error:
-        system("cls")
+        check_system_clean()
         print("Permission Error.")
         print(error)
 
 
-
 # Main ---------------------------------------------------------------
 def main():
-    system("cls")
+    check_system_clean()
     print(f"""Ruta de Recetas: '{str(PATH)}'""")    
     contador_recetas(PATH)
 
@@ -234,13 +246,13 @@ def main():
                 case 6:
                     user_option = True
                 case _:
-                    system("cls")
+                    check_system_clean()
                     print("Enter a valid option!")
                     continue
 
 
         except ValueError:
-            system("cls")
+            check_system_clean()
             print("Enter a valid option!")
 
 
