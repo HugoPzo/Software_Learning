@@ -68,7 +68,8 @@ def escoger_categoria(path):
         categorias = {}
 
         print("Categorias Disponibles: ".upper())
-        for indice, nombre_receta in enumerate(path.glob("*")):
+                                                # .iterdir() -> Iterate all Directories
+        for indice, nombre_receta in enumerate(path.iterdir()):
             indice = str(indice)
             print(f"[{indice}]", nombre_receta.stem)
             categorias[indice] = nombre_receta
@@ -79,7 +80,6 @@ def escoger_categoria(path):
             return categorias[user_option]
         else:
             print("Invalid option, please try again.")
-
 
 # Funcion que permite escoger una receta y devuelve su 'Path'
 def escoger_receta(ruta_categoria):
@@ -201,7 +201,8 @@ def option_five(path):
     try:
         ruta_categoria = escoger_categoria(path)
         
-        os.remove(ruta_categoria)   
+        # Remove Directory (PATH    )
+        Path(ruta_categoria).rmdir()
 
         print(f"{ruta_categoria} has been deleted.")  
 
