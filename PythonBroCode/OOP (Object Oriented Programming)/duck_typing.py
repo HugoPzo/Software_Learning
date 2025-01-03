@@ -27,7 +27,7 @@ class Chicken:
 
 class Person:
 
-    def catch(self,duck):
+    def catch(self, duck):
 
         duck.walk()
         duck.talk()
