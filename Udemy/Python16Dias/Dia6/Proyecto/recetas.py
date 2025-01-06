@@ -12,7 +12,8 @@ def check_system_clean():
     elif platform == "win32":
         return system("cls")
 
-    system("cls")
+
+system("cls")
 
 usuario = os.getlogin()
 

@@ -1,0 +1,21 @@
+# DECORADORES
+
+    - Funciones que modifican el comportamiento de otras Funciones
+
+    # No decorador
+    def mayuscula(texto):
+        print(texto.upper())
+
+    Salida 
+        - mayuscula("YosoyTu")
+            YOSOYTU
+
+    # Decorador
+    @decorador
+    def mayusucula(texto)
+        print(texto.upper())
+
+        - mayuscula("YosoyTu")
+            Hola
+            YOSOYTU
+            Adios

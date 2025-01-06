@@ -1,0 +1,19 @@
+# Unittest 
+
+- Biblioteca integrada que prueba nuestro codigo
+    import unittest
+
+- Se necesita un codigo que se desea probar y un modulo que solo se usa para las prubas
+
+- Codigo a probar
+    Codigo
+
+- Codigo con el test
+    '
+    import unittest
+    import <modulo_a_probar.py>
+
+    class Prueba(unittest.TestCase):
+        *pruebas
+        
+    '

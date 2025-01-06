@@ -1,0 +1,26 @@
+- Pylint (Ayuda a identificar el correcto estilo de nuestro codigo) 
+    *pip install pylint*
+    PEP-8 = Conjunto de reglas de   convecion de estilo  
+
+    - Se debe probar desde la terminal
+        Estar en el mismo path que el archivo 
+        *pylint <nombre_archivo.py>*
+
+        *pylint <nombre_archivo.py> -r y*
+            -r = reporte
+            y = Yes
+
+    # Errores - Sintaxis del reporte
+
+        - C0304 - Los que empiezan con 'C' son cuestiones de estilo, sintaxis que no respetan las convenciones
+
+        - E0602 - Los que empiezan con 'E' son errores
+
+        - R - Con 'R' son 'Refactor' La refactorización (del inglés refactoring) es una técnica de la ingeniería de software para reestructurar un código fuente, alterando su estructura interna sin cambiar su comportamiento externo.
+
+        - W - Warning 'Avisos'
+
+
+        - Tablas
+
+            Son reportes / estadisticas de nuestro codigo

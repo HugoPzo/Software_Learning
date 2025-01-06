@@ -1,0 +1,20 @@
+PyPi - Repositorio de paquetes de Python de Codigo Abierto de terceros
+https://pypi.org/ - Python Packages 'Busqueda'
+
+pip install - Descarga de paquetes
+
+
+Módulo - Cualquier codigo de Python guardado en un archivo python
+    - Alberga (Funciones, Clases, variables)
+
+Paquetes - Conjuntos de Modulos (Carpeta(Paquete) con todos los arcchivos Python(Modulos))
+    Constructor de Paquete
+    - Todo Paquete debe contener un módulo '__init__.py' para que Python entienda que es un paquete
+    - Se pueden crear subpaquetes, al igual que los paquetes deben contener un modulo '__init__.py'
+
+
+
+Paquetes Reconocidos
+
+Pandas - Data Analysis (pip install pandas)
+Scikit-learn - Machine Learning (pip install scikit-learn)
