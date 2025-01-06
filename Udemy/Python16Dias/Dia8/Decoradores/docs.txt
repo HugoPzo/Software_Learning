@@ -1,5 +1,11 @@
 # DECORADORES
 
+## LOS DECORADORES SON FUNCIONES QUE AÑADEN FUNCIONALIDADES A OTRAS FUNCIONES
+
+    TODO EN PYTHON ES UN OBJETO
+
+    Los decoradores son como un switch, pueden modificar el comportamiento de una funcion si son añadidos
+
     - Funciones que modifican el comportamiento de otras Funciones
 
     # No decorador
