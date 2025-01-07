@@ -1,7 +1,7 @@
 # Unittest 
 
 - Biblioteca integrada que prueba nuestro codigo
-    import unittest
+        * import unittest *
 
 - Se necesita un codigo que se desea probar y un modulo que solo se usa para las prubas
 
@@ -17,3 +17,32 @@
         *pruebas
         
     '
+
+- CASO SIN ERRORES
+    - TERMINAL
+    
+    ----------------------------------------------------------------------
+    Ran 1 test in 0.000s
+
+    OK
+
+- CASO CON ERRORES
+
+    F
+    ======================================================================
+    FAIL: test_mayusculas (__main__.Prueba.test_mayusculas)
+    ----------------------------------------------------------------------
+    Traceback (most recent call last):
+    File "/home/hugo/Documentos/Software_Learning/Udemy/Python16Dias/Dia8/Pylint_Unittest/Unittest/prueba_codigo.py", line 19, in test_mayusculas
+        self.assertEqual(resultado_codigo, 'BUN DIA')
+        ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    AssertionError: 'BUEN DIA' != 'BUN DIA'
+    - BUEN DIA
+    ?   -
+    + BUN DIA
+
+
+    ----------------------------------------------------------------------
+    Ran 1 test in 0.001s
+
+    FAILED (failures=1)

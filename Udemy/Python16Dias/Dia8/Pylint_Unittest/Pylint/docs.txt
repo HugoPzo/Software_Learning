@@ -1,12 +1,12 @@
 - Pylint (Ayuda a identificar el correcto estilo de nuestro codigo) 
     *pip install pylint*
-    PEP-8 = Conjunto de reglas de   convecion de estilo  
+    PEP-8 = Conjunto de reglas de convecion de estilo  
 
     - Se debe probar desde la terminal
         Estar en el mismo path que el archivo 
         *pylint <nombre_archivo.py>*
 
-        *pylint <nombre_archivo.py> -r y*
+        * pylint <nombre_archivo.py> -r y *
             -r = reporte
             y = Yes
 
@@ -24,3 +24,111 @@
         - Tablas
 
             Son reportes / estadisticas de nuestro codigo
+
+
+
+# EJEMPLO RESULTADO PYLINT
+
+pylint pylint_test.py -r y
+************* Module pylint_test
+pylint_test.py:10:1: W0511: Todo dentro de una funcion - Por convencion (fixme)
+pylint_test.py:11:0: C0116: Missing function or method docstring (missing-function-docstring)
+
+
+Report
+======
+4 statements analysed.
+
+Statistics by type
+------------------
+
++---------+-------+-----------+-----------+------------+---------+
+|type     |number |old number |difference |%documented |%badname |
++=========+=======+===========+===========+============+=========+
+|module   |1      |1          |=          |100.00      |0.00     |
++---------+-------+-----------+-----------+------------+---------+
+|class    |0      |NC         |NC         |0           |0        |
++---------+-------+-----------+-----------+------------+---------+
+|method   |0      |NC         |NC         |0           |0        |
++---------+-------+-----------+-----------+------------+---------+
+|function |1      |1          |=          |0.00        |0.00     |
++---------+-------+-----------+-----------+------------+---------+
+
+
+
+18 lines have been analyzed
+
+Raw metrics
+-----------
+
++----------+-------+------+---------+-----------+
+|type      |number |%     |previous |difference |
++==========+=======+======+=========+===========+
+|code      |5      |27.78 |NC       |NC         |
++----------+-------+------+---------+-----------+
+|docstring |3      |16.67 |NC       |NC         |
++----------+-------+------+---------+-----------+
+|comment   |3      |16.67 |NC       |NC         |
++----------+-------+------+---------+-----------+
+|empty     |7      |38.89 |NC       |NC         |
++----------+-------+------+---------+-----------+
+
+
+
+Duplication
+-----------
+
++-------------------------+------+---------+-----------+
+|                         |now   |previous |difference |
++=========================+======+=========+===========+
+|nb duplicated lines      |0     |0        |0          |
++-------------------------+------+---------+-----------+
+|percent duplicated lines |0.000 |0.000    |=          |
++-------------------------+------+---------+-----------+
+
+
+
+Messages by category
+--------------------
+
++-----------+-------+---------+-----------+
+|type       |number |previous |difference |
++===========+=======+=========+===========+
+|convention |1      |1        |1          |
++-----------+-------+---------+-----------+
+|refactor   |0      |0        |0          |
++-----------+-------+---------+-----------+
+|warning    |1      |1        |1          |
++-----------+-------+---------+-----------+
+|error      |0      |0        |0          |
++-----------+-------+---------+-----------+
+
+
+
+% errors / warnings by module
+-----------------------------
+
++------------+------+--------+---------+-----------+
+|module      |error |warning |refactor |convention |
++============+======+========+=========+===========+
+|pylint_test |0.00  |100.00  |0.00     |100.00     |
++------------+------+--------+---------+-----------+
+
+
+
+Messages
+--------
+
++---------------------------+------------+
+|message id                 |occurrences |
++===========================+============+
+|missing-function-docstring |1           |
++---------------------------+------------+
+|fixme                      |1           |
++---------------------------+------------+
+
+
+
+
+------------------------------------------------------------------
+Your code has been rated at 5.00/10 (previous run: 5.00/10, +0.00)

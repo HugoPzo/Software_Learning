@@ -63,7 +63,7 @@
 ## DECORADOR
 ## LOS DECORADORES AÑADEN FUNCIONALIDAD A LAS FUNCIONES
 
-# UN DECORADOR ENVUELVE A TODA LA FUNCION PASADA (POR DEBAJO)
+# UN DECORADOR ENVUELVE A TODA LA FUNCION PASADA 
 def decorar_saludo(funcion):
 
     def otra_funcion(palabra):
@@ -85,15 +85,19 @@ def minuscula(texto):
     print(texto.lower())
 
 
-mayuscula("python")
+mayuscula("python") # PYTHON
+print("\n")
 
 
-minuscula("PYTHON")
+minuscula("PYTHON") # HOLA \n python /n ADIOS
+print("\n")
 
 
 # Funcion sin decorador
 mayuscula_decorada = decorar_saludo(mayuscula)
 mayuscula_decorada("hugo")
+
+print("\n")
 
 minuscula_decorada = decorar_saludo(minuscula)
 minuscula_decorada("HUGO")
