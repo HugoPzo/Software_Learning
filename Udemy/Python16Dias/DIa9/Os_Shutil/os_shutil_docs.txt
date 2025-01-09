@@ -1,0 +1,7 @@
+# send2trash - MODULO QUE ELIMINA ARCHIVO O DIRECTORIOS Y LOS MANDA A LA PAPELERA
+
+    * pip install send2trash *
+
+    import send2trash
+
+    send2trash.send2trash(ruta_archivo)

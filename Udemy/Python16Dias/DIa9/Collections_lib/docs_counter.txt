@@ -1,0 +1,5 @@
+# Paquete que viene con la libreria de Python
+
+    freom collections import [elemento]
+
+    - Sirve principalmente para agrupar repeticiones de caracteres o numero en iterables

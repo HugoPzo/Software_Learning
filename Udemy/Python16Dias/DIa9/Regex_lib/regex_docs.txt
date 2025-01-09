@@ -1,0 +1,23 @@
+# REGULAR EXPRESIONS
+
+Caracteres Especiales       Descripcion             Ejemplo
+
+MINUSCULAS
+\d                          digito numérico         v\d.\d\d -> #v1.02
+\w                          char alfanumerico       \w\w\w-\w\w -> #Ab1-24
+\s                          espacio en blanco       numero\s\d\d -> #numero 34
+
+MAYUSCULAS - EFECTO CONTRARIO
+\D                          NO Numerico             \D\D\D\D -> #-Ve?
+\W                          NO alfanumerico         \W\W\W -> +*!
+\S                          No espacio en blanco    \S\S\S\S -> 1g?D
+
+Cuantificadores - Ejemplo - \d{3}-\d{3}-\d{4}
++                           1 o mas veces           codigo_\d-\d+ -> codigo_4-34453
+{n}                         se repite 'n' veces     \d-\d{4} -> 2-3671
+{n, m}                      se repite 'n' a 'm'     \w{3,5} -> hola/vo415
+                            veces
+{n,}                        desde 'n' a infinito    -\d{4,}- -> -534535-
+*                           0 o mas veces           -\w\s*\w -> a3 / f  4
+?                           1 ó 0                   -casas? -> casa/casas 
+                                                        Singular o Plural 
