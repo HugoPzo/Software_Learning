@@ -29,7 +29,7 @@ def busqueda_numserie(ruta_archivos, patron):
             # ITERAMOS ARCHIVOS
             for arch in archivo: 
                 # ABRIMOS LA RUTA AL ARCHIVO
-                ruta_archivo = Path(f"{carpeta}/{arch}")
+                ruta_archivo = Path(carpeta, arch)
 
                 # LEEMOS CONTENIDO Y BUSCAMOS EL PATRON
                 texto_archivo = ruta_archivo.read_text()
@@ -54,7 +54,7 @@ def mostrar_menu(fecha_actual, numeros_serie, tiempo_ejecucion):
     for archivo, no_serie in numeros_serie:
         print(f"{archivo}\t\t{no_serie}")
 
-    print(f"Numeros encontrados: {len(numeros_serie)}")
+    print(f"\nNumeros encontrados: {len(numeros_serie)}")
     print(f"Duracion de la busqueda: {tiempo_ejecucion} segundos")
     print("----------------------------------------------------")
 
@@ -64,8 +64,8 @@ def main():
     inicio = time.time()
 
     # RUTA ARCHIVOS
-    ruta_archivos = "Mi_Gran_Directorio"
-    patron = "N\w{3}-\d{5}"
+    ruta_archivos = Path("C:/Users/hugop\OneDrive/Escritorio/Software_Learning/Udemy/Python16Dias/Dia9/Proyecto/Mi_Gran_Directorio")
+    patron = "N\D{3}-\d{5}"
 
     # NUMEROS DE SERIE ENCONTRADOS
     numeros_serie = busqueda_numserie(ruta_archivos, patron)
