@@ -23,13 +23,13 @@ pygame.display.set_icon(icon)
 # FONDO
 bg_image = pygame.image.load("fondo_espacio.png")
 
-# AGREGAR MUSICA
-# Cargar Musica
-mixer.music.load("musica_fondo.mp3")
-# Volumen Musica
-mixer.music.set_volume(0.1)
-# LOOP INFINITO - PLAY
-mixer.music.play(-1)
+# # AGREGAR MUSICA
+# # Cargar Musica
+# mixer.music.load("musica_fondo.mp3")
+# # Volumen Musica
+# mixer.music.set_volume(0.1)
+# # LOOP INFINITO - PLAY
+# mixer.music.play(-1)
 
 # -----------------------------------------
 mitad_display_x = (pygame.display.get_window_size()[0] // 2)
@@ -74,21 +74,21 @@ misil_visible = False
 # FUNCION MISIL JUGADOR
 def misil(x, y):
     global misil_visible
-    misil_visible = True
+    misil_visible = True        # Centro de la nave         
     pantalla.blit(imagen_misil, (x + (nave_jugador.get_size()[0] // 2) - 8, y - 10))
 # -----------------------------------------
 
 # ENEMIGO -------------------------------
 nave_enemigo = pygame.image.load("nave_enemiga.png")
 numero_naves_enemigas = 5
-enemy_speed = 2
+enemy_speed = 2.5
 
 posicion_borde_enemigo_x = pygame.display.get_window_size()[0] - nave_enemigo.get_size()[0]
 
 enemigo_x_cambio = enemy_speed
 enemigo_y_cambio = 20
 
-
+# POSICION RANDOM DEL ENEMIGO
 def posicion_enemigo():
     nave_enemigo_x = random.randint(0, posicion_borde_enemigo_x) 
     nave_enemigo_y = random.randint(0, (pygame.display.get_window_size()[1] // 2) - nave_enemigo.get_size()[1])
@@ -107,11 +107,19 @@ def enemigo(x, y):
 def hay_colision(x_1, y_1, x_2, y_2):
     # Formula distancia entre dos puntos
     distancia = math.sqrt((pow((x_2 - x_1), 2) + pow((y_2 - y_1), 2)))
-    # CALCULAMOS LA DISTANCIA ENTRE OBJETOS, SI LA DISTANCIA ES MENOR A 27 ES MUY PROBABLE LA COLISION
+    # CALCULAMOS LA DISTANCIA ENTRE OBJETOS, SI LA DISTANCIA ES MENOR A 17 ES MUY PROBABLE LA COLISION
     if distancia < 17:
         return True
     else:
         return False
+
+
+# FINAL DEL JUEGO
+fuente_final = pygame.font.Font("freesansbold.ttf", 40)
+
+def texto_final():
+    mi_fuente_final = fuente_final.render(f"JUEGO TERMINADO", True, (255, 255, 255))
+    pantalla.blit(mi_fuente_final, ((170), (pygame.display.get_window_size()[1] // 2 - (mi_fuente_final.get_size()[1]))))
 
 
 # LOOP JUEGO - TODO LO QUE SE NECESITA ACTUALIZAR CONSTANTEMENTE IRA DENTRO DEL LOOP 
@@ -122,7 +130,7 @@ while running:
     # pantalla.fill((00, 11, 28)) 
     pantalla.blit(bg_image, (0, 0))
 
-    # PYGAME SE MANEJA POR EVENTOS
+    # PYGAME SE MANEJA POR EVENTOS - TODO EL TIEMPO REALIZA UN LOOP EN BUSCA DE ALGUN EVENTO
     for event in pygame.event.get():
         # SI SE DETECTA EL CIERRE DE LA VENTANA, EL PROGRAMA ACABA
         if event.type == pygame.QUIT:
@@ -136,21 +144,45 @@ while running:
         if pressed[pygame.K_a]:
             jugador_x -= player_speed
             # jugador_x %= pygame.display.get_window_size()[0] - (nave_jugador.get_size()[0] // 2) # En caso de querer aparecer al otro lado de la pantalla
+
+            # POSIBILIDAD DE DISPARAR MIENTRAS HAY MOVIMIENTO
+            if pressed[pygame.K_SPACE]:
+                # CARGAMOS SONIDO - NO MUSICA
+                sonido_misil = mixer.Sound("disparo.mp3")
+                sonido_misil.set_volume(0.1)
+                sonido_misil.play()
+                # SOLO SE PUEDE DISPARAR SI EL MISIL NO ES VISIBLE
+                if not misil_visible:
+                    misil_x = jugador_x
+                    misil_y = jugador_y
+                    misil(misil_x, misil_y)
+            
         elif pressed[pygame.K_d]:
             jugador_x += player_speed 
             # jugador_x %= pygame.display.get_window_size()[0] - (nave_jugador.get_size()[0] // 2)
+            
+            if pressed[pygame.K_SPACE]:
+            # CARGAMOS SONIDO - NO MUSICA
+                sonido_misil = mixer.Sound("disparo.mp3")
+                sonido_misil.set_volume(0.1)
+                sonido_misil.play()
+                # SOLO SE PUEDE DISPARAR SI EL MISIL NO ES VISIBLE
+                if not misil_visible:
+                    misil_x = jugador_x
+                    misil_y = jugador_y
+                    misil(misil_x, misil_y)
+                
         elif pressed[pygame.K_SPACE]:
             # CARGAMOS SONIDO - NO MUSICA
-            sonido_misil = mixer.Sound("disparo.mp3")
-            sonido_misil.set_volume(0.1)
-            sonido_misil.play()
-            # SOLO SE PUEDE DISPARAR SI EL MISIL NO ES VISIBLE
-            if not misil_visible:
-                misil_x = jugador_x
-                misil_y = jugador_y
-                misil(misil_x, misil_y)
+                sonido_misil = mixer.Sound("disparo.mp3")
+                sonido_misil.set_volume(0.1)
+                sonido_misil.play()
+                # SOLO SE PUEDE DISPARAR SI EL MISIL NO ES VISIBLE
+                if not misil_visible:
+                    misil_x = jugador_x
+                    misil_y = jugador_y
+                    misil(misil_x, misil_y)
                 
-
 
         # EVENTO MOVIMIENTO CON TECLADO - AL MOMENTO DE LEVANTAR LA TECLA
         if event.type == pygame.KEYUP:
@@ -177,6 +209,15 @@ while running:
     elif nave_enemigo_x >= posicion_borde_enemigo_x:
         enemigo_x_cambio = -enemy_speed
         nave_enemigo_y += enemigo_y_cambio
+        
+
+    elif nave_enemigo_y >= 200:
+        # SI UN ENEMIGO REBASA EL LIMITE LA IMAGEN DEL ENEMIGO SE VUELVE INVISIBLE
+        transparent = (0, 0, 0, 0)
+        nave_enemigo.fill(transparent)
+        texto_final()
+        
+        
 
     # MOVIMIENTO MISIL
     if misil_y <= -imagen_misil.get_size()[1]:
@@ -191,16 +232,13 @@ while running:
     colision_misil = hay_colision(nave_enemigo_x, nave_enemigo_y, misil_x, misil_y)
     if colision_misil:
         sonido_colision = mixer.Sound("game_over.mp3")
-        sonido_misil.set_volume(0.1)
-        sonido_misil.play()
+        sonido_colision.set_volume(0.1)
+        sonido_colision.play()
         misil_y = jugador_y
         misil_visible = False
         puntaje += 1
         nave_enemigo_x, nave_enemigo_y = posicion_enemigo()
 
-    colision_jugador = hay_colision(jugador_x, jugador_y, nave_enemigo_x, nave_enemigo_y)
-    if colision_jugador:
-        print("Hola")
 
     # COLOCAMOS AL JUGADOR - LLAMAMOS FUNCION
     enemigo(nave_enemigo_x, nave_enemigo_y)
