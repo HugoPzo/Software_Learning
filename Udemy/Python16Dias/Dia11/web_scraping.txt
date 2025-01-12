@@ -1,0 +1,5 @@
+# LIBRERIAS A UTILIZAR 
+
+-   beautifulsoup4
+-   lxml
+-   requests
