@@ -24,7 +24,7 @@ class Stopwatch(QWidget):
 
         # LAYOUTS & BUTTONS
         vbox = QVBoxLayout()
-        vbox.addWidget(self.time_label, alignment=Qt.AlignCenter)
+        vbox.addWidget(self.time_label, alignment=Qt.AlignmentFlag.AlignCenter)
         hbox = QHBoxLayout()
         hbox.addWidget(self.start_button)
         hbox.addWidget(self.stop_button)
@@ -64,7 +64,7 @@ class Stopwatch(QWidget):
 
         # Connect Timer
         self.timer.timeout.connect(self.update_display)
-
+    
     
     def start(self):
         # Set an interval for a timeout every 10 miliseconds

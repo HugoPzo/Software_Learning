@@ -1,5 +1,8 @@
 # LIBRERIAS A UTILIZAR 
 
--   beautifulsoup4
--   lxml
--   requests
+-   beautifulsoup4 > libreria que ayuda a obtener mas rapido la informacion de un sitio web, devuelve listas con todos los objetos señalados
+-   lxml > lxml es una herramienta sólida y fácil de usar para extraer datos de documentos HTML. lxml está optimizado para ser rápido y es compatible con los selectores XPath y CSS, lo que permite analizar de manera eficiente documentos XML y HTML de gran tamaño
+-   requests > libreria que conecta el codigo de una pagina web con nuestro programa
+
+# PAGINA PARA PRACTICA WEB SCRAPING
+https://toscrape.com/
