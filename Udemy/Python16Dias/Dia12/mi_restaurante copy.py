@@ -298,6 +298,8 @@ class MainWindow(QWidget):
         total_drink = map()
         total_dessert = map()
 
+        print(total_food)
+
     
     def receipt_button_func(self):
         print("Receipt")
