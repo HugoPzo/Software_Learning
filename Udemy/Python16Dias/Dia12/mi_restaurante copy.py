@@ -1,8 +1,10 @@
 
-from PyQt6.QtWidgets import QApplication, QMainWindow, QHBoxLayout, QVBoxLayout, QLabel, QWidget, QFrame, QCheckBox, QRadioButton, QButtonGroup, QLineEdit, QSpinBox, QGridLayout, QPushButton, QTextEdit
+from PyQt6.QtWidgets import QApplication, QMainWindow, QHBoxLayout, QVBoxLayout, QLabel, QWidget, QFrame, QCheckBox, QRadioButton, QButtonGroup, QLineEdit, QSpinBox, QGridLayout, QPushButton, QTextEdit, QFileDialog, QMessageBox
 from PyQt6.QtCore import Qt
+from pathlib import Path
 import functools
 import sys
+import os
 
 class MainWindow(QWidget):
 
@@ -10,6 +12,8 @@ class MainWindow(QWidget):
         super().__init__()
 
         self.food_list = []
+
+        self.list_check_spin = []
 
         self.lista_comidas = { 
             "Pollo": {"price": 8.50, "amount": 0}, 
@@ -43,14 +47,15 @@ class MainWindow(QWidget):
         self.calculator_buttons = [ ["7", "8", "9", "+"],
                                     ["4", "5", "6", "-"],
                                     ["1", "2", "3", "*"],
-                                    ["C", "0", "=", "/"]]
+                                    [".", "0", "=", "/"],
+                                    ["C"]]
         
         self.total = ""
 
 
         # WINDOW SETTINGS ----------------------------
         # BLOCK RESIZE THE WINDOW
-        # self.setFixedSize(1000, 600)
+        self.setMinimumSize(1200, 600)
         # .move(x, y) -> Location in Window
         # WINDOW TITLE
         self.setWindowTitle("MI RESTAURANTE - SISTEMA DE FACTURACION")
@@ -79,12 +84,18 @@ class MainWindow(QWidget):
         # Costs Panel ****************************************
         self.costs_panel = QGridLayout()
 
-        self.costo_comida = QLabel("Costo Comida")
-        self.costo_bebida = QLabel("Costo Bebida")
-        self.costo_postres = QLabel("Costo Postres")
-        self.label_subtotal= QLabel("Subtotal")
-        self.label_impuestos = QLabel("Impuestos")
-        self.label_total = QLabel("Total")
+        self.costo_comida = QLabel()
+        
+        self.costo_bebida = QLabel()
+        
+        self.costo_postres = QLabel()
+        
+        self.label_subtotal= QLabel()
+        
+        self.label_impuestos = QLabel()
+        
+        self.label_total = QLabel()
+        
         # -------------------------------------------
         
         # RIGHT PANEL ---------------------------------------
@@ -104,7 +115,6 @@ class MainWindow(QWidget):
         # Buttons ***************************************
         self.buttons_layout = QHBoxLayout()
         self.total_button = QPushButton("Total", self)
-        self.receipt_button = QPushButton("Receipt", self)
         self.save_button = QPushButton("Save", self)
         self.reset_button = QPushButton("Reset", self)
 
@@ -171,6 +181,8 @@ class MainWindow(QWidget):
         self.right_panel.addWidget(self.receipt)
         self.receipt.setEnabled(False)
         self.receipt.setContentsMargins(10, 10, 10, 10)
+        self.receipt.verticalScrollBar().maximum()
+        self.receipt.setStyleSheet("color: #fff; font-size: 18px;")
         # ****************************************************
 
         # Buttons ***************************************
@@ -179,11 +191,7 @@ class MainWindow(QWidget):
         self.buttons_layout.addWidget(self.total_button)
         self.total_button.setStyleSheet("padding: 7px;")
         self.total_button.clicked.connect(self.total_button_func)
-        
-        self.buttons_layout.addWidget(self.receipt_button)
-        self.receipt_button.setStyleSheet("padding: 7px;")
-        self.receipt_button.clicked.connect(self.receipt_button_func)
-        
+                
         self.buttons_layout.addWidget(self.save_button)
         self.save_button.setStyleSheet("padding: 7px;")
         self.save_button.clicked.connect(self.save_button_func)
@@ -202,8 +210,9 @@ class MainWindow(QWidget):
         # SET PRINCIPAL LAYOUT
         self.setLayout(gbox)
 
-
+    # ----------------------
     # FOOD METHODS
+    # ----------------------
     def list_food(self, title_label, food_dict, layout, init_row, column):
         layout.addWidget(title_label, 0, 0, Qt.AlignmentFlag.AlignCenter)
         row = init_row
@@ -218,7 +227,8 @@ class MainWindow(QWidget):
             # SEND PARAMETERS WITH A SLOT
             self.checkbox.toggled.connect(functools.partial(self.check_food, food, value["price"], self.spinbox))
             self.spinbox.valueChanged.connect(functools.partial(self.update_food_amount, food_dict, food))
-            
+
+            self.list_check_spin.append((self.checkbox, self.spinbox))
             row += 1
 
 
@@ -236,21 +246,19 @@ class MainWindow(QWidget):
             spinbox.setRange(0, 10)
             spinbox.setValue(0)
 
-        print(self.food_list)
-
     
     def update_food_amount(self, food_dict, food):
         amount = self.sender()
         food_dict[food]["amount"] = amount.value()
         
-        print(food_dict[food])
-        
-    
+
     # ----------------------
     # COSTS METHODS
     # ----------------------
 
+    # ---------------------- 
     # CALCULATOR METHODS
+    # ---------------------- 
     def set_calculator_buttons(self, layout):
         row = 0
         column = 0
@@ -293,25 +301,114 @@ class MainWindow(QWidget):
     
     # ---------------------- 
     # BUTTONS METHODS - END METHODS
-    def total_button_func(self):
-        total_food = map()
-        total_drink = map()
-        total_dessert = map()
-
-        print(total_food)
-
-    
-    def receipt_button_func(self):
-        print("Receipt")
+    # ---------------------- 
+    # Total
+    def get_total_value(self, food_dict):
+        result = 0
+        for item in food_dict.values():
+            result += item["price"] * item["amount"]
         
+        return result
 
 
+    def get_item_info(self, item):
+        item_price = ""
+        item_amount = ""
+
+        if item in self.lista_comidas:
+            item_price = self.lista_comidas[item]["price"]
+            item_amount = self.lista_comidas[item]["amount"]
+        elif item in self.lista_bebidas:
+            item_price = self.lista_bebidas[item]["price"]
+            item_amount = self.lista_bebidas[item]["amount"]
+        elif item in self.lista_postres:
+            item_price = self.lista_postres[item]["price"]
+            item_amount = self.lista_postres[item]["amount"]
+
+        return item_price, item_amount
+
+
+    def total_button_func(self):
+        total_food = self.get_total_value(self.lista_comidas)
+        total_drink = self.get_total_value(self.lista_bebidas)
+        total_dessert = self.get_total_value(self.lista_postres)
+
+        costo_subtotal = total_food + total_drink + total_dessert
+        costo_impuestos = costo_subtotal * 0.16
+        costo_total = costo_subtotal + costo_impuestos
+
+        self.costo_comida.setText(f"Costo Comida - {total_food}")
+        self.costo_bebida.setText(f"Costo Bebida - {total_drink}")
+        self.costo_postres.setText(f"Costo Postres - {total_dessert}")
+        self.label_subtotal.setText(f"Subtotal - {costo_subtotal:.02f}")
+        self.label_impuestos.setText(f"Impuestos(IVA) - {costo_impuestos:.02f}")
+        self.label_total.setText(f"Total - {costo_total:.02f}")
+
+        # Receipt
+        receipt = self.receipt
+        receipt.setEnabled(True)
+        receipt.verticalScrollBar().setEnabled(True)
+        receipt.setText("*"*50)
+        receipt.append("Item\tPrice\tAmount\t\tTotal")
+        for item in self.food_list:
+            price, amount = self.get_item_info(item)
+            receipt.append(f'{item}\t${price}\t{amount}\t\t${price*amount}')
+        receipt.append("*"*50)        
+        
+        receipt.append(f"Subtotal:\t\t\t\t ${costo_subtotal:.02f}")        
+        receipt.append(f"Impuestos:\t\t\t ${costo_impuestos:.02f}")        
+        receipt.append(f"Total:\t\t\t\t ${costo_total:.02f}")        
+        
+        receipt.append("\n")
+        receipt.append("*"*50)        
+
+
+    # Save
     def save_button_func(self):
-        print("Save")
+        text = self.receipt.toPlainText()
+        current_directory = os.getcwd()
 
+        try:
 
+            fname = QFileDialog.getSaveFileName(self,
+            "Open File",
+            f"{current_directory}",
+            "All Files (*);; Python Files (*.py);; Text File (*.txt)", "Text File (*.txt)")
+            file_path = Path(fname[0])
+            file_path.write_text(text)
+
+            if file_path.exists():
+                success_message = QMessageBox().information(self, "Guardado Exitosamente", "Se ha guardado con exito el recibo.")
+                
+    
+        except PermissionError:
+            denied_message = QMessageBox().information(self, "Error al guardar", "No se ha podido guardar el recibo.")
+
+    # Reset
     def reset_button_func(self):
-        print("Reset")
+
+        self.costo_comida.setText("")
+        self.costo_bebida.setText("")
+        self.costo_postres.setText("")
+        self.label_subtotal.setText("")
+        self.label_impuestos.setText("")
+        self.label_total.setText("")
+
+        self.receipt.setText("")
+        self.receipt.setEnabled(False)
+
+        self.total = ""
+        self.calculator_lineEdit.setText("")
+
+        
+        # Clean all checkbox - spinbox
+        for checkbox, spinbox in self.list_check_spin:
+
+            checkbox.setChecked(False)
+
+            spinbox.setEnabled(False)
+            spinbox.setRange(0, 10)
+            spinbox.setValue(0)
 
     # ----------------------
 
