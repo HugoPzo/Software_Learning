@@ -1,0 +1,40 @@
+# pyttsx3 - pip install pyttsx
+    Biblioteca para que el sistema detecte nuestra voz
+
+    # VISUALIZAR OPCIONES DE VOCES 
+    
+        engine = pyttsx3.init()
+
+        for voice in engine.getProperty('voices'):
+        print(voice)
+
+# speechrecognition - pip install SpeechRecognition
+    Biblioteca que reconoce nuestra voz y la convierte en texto
+
+# pywhatkit - pip install pywhatkit
+    Permite abrir sitios como YouTube, wikipedia, etc...
+
+# yfinance - pip install yfinance
+    Conecta con los datos economicos, acciones de empresas, etc...
+
+# pyjokes - pip install pyjokes
+    Bromas del asistente
+
+# import webbrowser
+    Manejar nuestro navegador de internet
+
+# import wikipedia
+    Manejar Wikipedia 
+
+# statsbombpy - pip install statsbombpy - https://www.geeksforgeeks.org/how-to-easily-get-football-data-with-a-python-package/
+    Resultados de Futbol
+
+    from statsbombpy import sb
+
+    Paso 2: Explorar las competencias disponibles:
+    Para ver las competiciones disponibles dentro del conjunto de datos de StatsBomb, utilice:
+
+    sb.competitions()
+
+
+
