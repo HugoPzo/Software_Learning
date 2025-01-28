@@ -59,8 +59,6 @@ def transformar_audio_en_texto():
 
             return "Sigo esperando"
         
-
-        
         # EN CASO DE NO RESOLVER EL PEDIDO
         except sr.RequestError:
 
@@ -70,14 +68,14 @@ def transformar_audio_en_texto():
             # DEVOLVER ERROR
             return "Sigo esperando"
         
-        # # ERROR INESPERADO
-        # except:
+        # ERROR INESPERADO
+        except:
 
-        #     # PRUEBA DE NO PEDIDO NO RESUELTO
-        #     print("Algo ha salido mal!")
+            # PRUEBA DE NO PEDIDO NO RESUELTO
+            print("Algo ha salido mal!")
 
-        #     # DEVOLVER ERROR
-        #     return "Sigo esperando"
+            # DEVOLVER ERROR
+            return "Sigo esperando"
         
 
 # FUNCION PARA QUE EL ASISTENTE PUEDA SER ESCUCHADO
@@ -148,6 +146,23 @@ def user_orders():
             assistant_talks("Starting YouTube!")
             webbrowser.open("www.youtube.com")
             continue
+        elif "stock price of" in order:
+            # SEPARAMOS EL NOMBRE DE LA EMPRESA 
+            action = order.split("of")[-1].strip()
+            wallet = {  "apple":  'AAPL',
+                        "amazon": 'AMZN',
+                        'google': 'GOOGL'}
+
+            try:
+                search_element = wallet[action]
+                data = yf.Ticker(search_element)
+                print(data.analyst_price_targets)
+                actual_price = data.analyst_price_targets['current']
+                assistant_talks(f"I found it, the price of {action} is {actual_price} dollars")
+                continue
+            except:
+                assistant_talks("I'm sorry, I didn't found it.")
+                continue
         elif "google" in order:
             assistant_talks("Starting Google!")
             webbrowser.open("www.google.com")
@@ -158,9 +173,6 @@ def user_orders():
         elif "time" in order:
             pedir_hora()
             continue
-        elif "goodbye" in order:
-            assistant_talks("GoodBye, see you soon!")
-            break
         elif "search in wikipedia" in order:
             assistant_talks("Searching in Wikipedia")
             order = order.replace("search in wikipedia", "")
@@ -183,23 +195,9 @@ def user_orders():
         elif "joke" in order:              # Idioma
             assistant_talks(pyjokes.get_joke("en"))
             continue
-        elif "stock price of" in order:
-            # SEPARAMOS EL NOMBRE DE LA EMPRESA 
-            action = order.split("of")[-1].strip()
-            print(action)
-            wallet = { 'apple': 'APPL',
-                        "amazon": 'AMZN',
-                        'google': 'GOOGL'}
-
-            try:
-                search_action = wallet[action]
-                search_action = yf.Ticker(search_action)
-                actual_price = search_action.info['regularMarketPrice']
-                assistant_talks(f"I found it, the price of {action} is {actual_price}")
-                continue
-            except:
-                assistant_talks("I'm sorry, I didn't found it.")
-                continue
+        elif "goodbye" in order:
+            assistant_talks("GoodBye, see you soon!")
+            break
 
 
 def main():
