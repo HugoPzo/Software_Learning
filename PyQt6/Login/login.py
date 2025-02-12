@@ -9,6 +9,7 @@ class LoginWindow(QWidget):
         self.login_button = QPushButton("Login")
         self.initUI()
 
+
     def initUI(self):
         self.setWindowTitle("LOGIN")
         # Lock resize of the window
