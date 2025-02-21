@@ -41,8 +41,8 @@ def find_element(BY_ID, name_id):
 def main ():
     set_driver(URL)
     action_move_to_element(find_element(By.CLASS_NAME, "oxwidget_headerlogin_title1 "))
-    find_element_sendkeys(By.ID, "loginEmail", "hugo.peror.04@gmail.com")
-    find_element_sendkeys(By.ID, "loginPassword", "Jabulani301@")
+    find_element_sendkeys(By.ID, "loginEmail", "")
+    find_element_sendkeys(By.ID, "loginPassword", "")
     find_element(By.CLASS_NAME, "oxwidget_headerlogin_popup")
     find_element(By.TAG_NAME, "form")
     find_element_click(By.XPATH, "//div[@class='oxwidget_headerlogin_popup']//form"
