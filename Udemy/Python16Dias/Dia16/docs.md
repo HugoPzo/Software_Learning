@@ -103,3 +103,56 @@ ya podremos acceder al administrador de Django
 
 Dentro del administrador podemos administrar Grupos y Ususarios
 por default
+
+---
+
+## Apps - Aplicaciones
+
+> Componentes de un sitio web
+
+Para crear una aplicacion dentro de nuestra carpeta del proyecto
+
+`python manage.py startapp <nombre-de-app>`
+
+Conectar proyecto con una aplicacion
+
+> settings.py - Agregramos
+
+```
+INSTALLED_APPS = [
+.
+.
+.
+'nombre_app.apps.NombreClase(apps.py)'
+]
+```
+
+Conectamos las 'urls' de todos los sitios
+
+> Creamos en la carpeta de nuestra app el archivo
+> 'urls.py'
+
+
+En views de nuestra app agregamos - Esto cuando sea llamado, dara una 
+respuesta, la cual sera lo que querramos renderizar en la pagina
+
+```python
+from django.http import HttpResponse
+
+def render(pedido):
+    return  HttpResponse('Lista Pendientes')
+```
+
+
+Dentro del archivo 'urls' de tu app importamos
+
+```python
+from django.urls import path
+from . import views -> Hace referencia a las vistas de la app
+
+urlpatterns = [
+    # Agregamos el path de nuestras vistas y lo renderizamos
+    url_patterns = [path('', views.render(), name='home')]
+]
+
+```
