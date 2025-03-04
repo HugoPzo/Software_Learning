@@ -1,0 +1,106 @@
+<!--Se crea un template para mostrar las vistas de la pagina (templates > <nombre_app> > nombre_archivo.html-->
+<!-- Pagina que extiende de la pagina principal -->
+<!--Extendemos los estilos de la pagina princiapl-->
+{% extends 'home/main.html'%}
+
+<!--Hereda los estilos-->
+<!-- Metemos los contenidos de cada pagina en el bloque-->
+{% block content%}
+
+<!-- Condicion if -->
+
+<div class="nav-superior">
+
+    <div>
+        <!-- Nombre del usuario -->
+        <!--Modo titulo (request.user)-->
+        <h1>Hola {{request.user|title}}</h1>
+        <h3 style="margin: 0">
+          Tienes <i>{{ tareas.count }}</i>
+          {{ count|pluralize:"tarea,tareas" }}
+          {{ count|pluralize:"incompleta,incompletas" }}
+        </h3>
+
+    </div>
+
+    <div>
+
+        {% if request.user.is_authenticated %}
+
+
+            <a href="{% url 'logout' %}">Salir</a>
+
+        {% else %}
+
+            <a href="{% url 'login' %}">Ingresar</a>
+
+        {% endif %}
+
+    </div>
+
+</div>
+
+
+
+
+<div class="buscador-container">
+
+    <!--Metodo GET-->
+
+    <div>
+
+        <form method="GET" style="display: inline-flex;">
+
+            <input type="text" name="area-buscar" placeholder="Busqueda" value="{{valor_busqueda}}">
+            <input type="submit" value="Buscar">
+
+        </form>
+
+    </div>
+
+    <a href="{% url 'crear-tarea' %}" style="color: #6d9420; font-size: 3em">&#x2b;</a>
+</div>
+
+<div class="container-tareas">
+
+    <!--Ciclo FOR en html django-->
+
+    <!--Se puede usar 'object list' para iterar sobre el modelo-->
+    {% for tarea in tareas %}
+
+        <!--Mostramos esto por cada iteracion-->
+
+
+                {% if tarea.completo %}
+                <div class="tarea-container tarea-completa">
+                    <h4 style="text-decoration: line-through">{{tarea.titulo}}</h4>
+                    <p>{{tarea.descricion}}</p>
+                    <p>{{tarea.creado}}</p>
+                    <a href="{% url 'editar-tarea' tarea.id %}">Editar Tarea</a>
+                    <a href="{% url 'eliminar-tarea' tarea.id %}">Eliminar</a>
+                </div>
+                {% else %}
+                <div class="tarea-container tarea-incompleta">
+                    <h4>{{tarea.titulo}}</h4>
+                    <p>{{tarea.descricion}}</p>
+                    <p>{{tarea.creado}}</p>
+                    <p><a href="{% url 'editar-tarea' tarea.id %}">Editar Tarea</a></p>
+                    <p><a href="{% url 'eliminar-tarea' tarea.id %}">&#x2612;</a></p>
+                </div>
+                {% endif %}
+
+
+    <!--En caso de que el modelo este vacio-->
+    {% empty %}
+
+        <h3>No existen elementos en esta lista</h3>
+
+    {% endfor %}
+
+
+
+{% endblock content%}
+
+
+
+</div>

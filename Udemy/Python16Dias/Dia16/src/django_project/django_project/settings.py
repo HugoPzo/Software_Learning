@@ -28,6 +28,8 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
+
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -39,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'home.apps.HomeConfig',
     'test_app',
+    'repaso',
 ]
 
 MIDDLEWARE = [
@@ -56,7 +59,8 @@ ROOT_URLCONF = 'django_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [Path('C:/Users/hugop/Documents/Software_Learning/Udemy/Python16Dias/Dia16/src/'
+                      'django_project/home/templates')], # Asignamos las plantillas para cofigurar las vistas
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -105,7 +109,8 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+# Lenguaje de django
+LANGUAGE_CODE = 'es-mx'
 
 TIME_ZONE = 'UTC'
 
@@ -113,6 +118,10 @@ USE_I18N = True
 
 USE_TZ = True
 
+
+# Redireccionamientos en caso de login  - logout
+LOGIN_URL = 'login'
+LOGOUT_REDIRECT_URL = 'login'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/

@@ -1,5 +1,3 @@
-from tkinter.constants import CASCADE
-
 from django.db import models
 # DJANGO Y TIENE CREADAS ALGUNAS TABLAS - EN ESTE CASO USAREMOS LAS DE USUARIOS
 from django.contrib.auth.models import User

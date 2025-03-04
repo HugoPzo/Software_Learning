@@ -1,0 +1,14 @@
+{% extends 'home/main.html'%}
+{% block content%}
+  <a href="{% url 'home' %}">Volver a Inicio</a>
+
+  <form method="POST">
+      {% csrf_token %}
+
+      <p>Vas a eliminar la tarea: "{{tarea}}"</p>
+      <input type="submit" value="Eliminar">
+
+  </form>
+
+
+{% endblock content%}

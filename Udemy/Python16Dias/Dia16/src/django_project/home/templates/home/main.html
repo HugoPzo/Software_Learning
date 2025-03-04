@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Main</title>
+    <link rel="stylesheet" href="">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abel&family=Montserrat:ital,wght@0,100..900;
+    1,100..900&display=swap" rel="stylesheet">
+    <style>
+
+      body{
+          background-color: #d0d0d0;
+          font-family: "Abel", sans-serif;
+          padding: 3.3em;
+          color: black;
+      }
+
+      .container{
+          color: black;
+          padding: 1.4em;
+          min-width: 40em;
+          margin: auto;
+          background-color: #fff;
+          border: 0.1em solid #000000;
+          border-radius: 5px;
+          -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.30);
+      }
+
+      h1, h2, h3, h4, h5, h6{
+          font-family: "Book Antiqua", sans-serif;
+      }
+
+      a{
+          color: #000;
+          text-decoration: none;
+      }
+      a:hover{
+          color: #6d9420;
+      }
+      .nav-superior{
+          display: flex;
+          flex-direction: column;
+          gap: 3em;
+          justify-content: space-between;
+          align-items: center;
+          color: #fff;
+          padding: 15px;
+          border-bottom: 1px solid #fff;
+          border-left: 1px solid #fff;
+          border-radius: 0 0 10px 10px;
+          background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,0,3,1) 35%, rgba(11,107,126,1) 100%);
+      }
+
+      .nav-superior a{
+          color: white;
+      }
+
+      .container-tareas{
+          display: flex;
+          flex-wrap: wrap;
+          gap: 5em;
+          align-items: center;
+          justify-content: space-evenly;
+      }
+
+      .tarea-container{
+          border: 1px solid black;
+          background: white;
+          box-shadow: 0 0 10px 0 black;
+          text-align: center;
+          color: black;
+          padding: 1em;
+          min-width: 10em;
+          max-width: 10em;
+          border-radius: 10px;
+          box-sizing: content-box;
+      }
+
+      .tarea-completa:hover{
+          border: 2px solid green;
+      }
+
+      .tarea-incompleta:hover{
+          border: 2px solid darkred;
+      }
+      .tarea-container a{
+          color: black;
+      }
+
+      .tarea-container a:hover{
+          color: darkred;
+      }
+
+      .buscador-container{
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          background-color: #a69a84;
+          color: white;
+          padding: 1.5em 1em;
+          margin-bottom: 2em;
+      }
+
+      input[type=text],
+      input[type=password],
+      textarea{
+          border: 1px solid #000;
+          border-radius: 5px;
+          padding: 10px;
+          width: 90%;
+      }
+
+    </style>
+
+
+</head>
+<body>
+
+    <!--Usaremos esta vista principal para heredar todos los estilos de la pagina - extenderan de esta pagina principal-->
+    <!--Un solo estilo para todas las paginas-->
+
+
+    <div class="container">
+        <!--Etiquetas para identificar que se trabajara con contenido en bloque-->
+        {% block content%}
+
+        {% endblock content%}
+
+
+    </div>
+
+</body>
+</html>

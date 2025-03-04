@@ -1,0 +1,12 @@
+{% extends 'home/main.html' %}
+{% block content%}
+
+    <a href="{% url 'home' %}">Volver a Inicio</a>
+
+<!-- Se usan dos corchetes para las variables -->
+
+      <h1>Tarea: {{tarea}}</h1>
+        <p>{{tarea.descricion}}</p>
+
+
+{% endblock content%}

@@ -1,0 +1,74 @@
+{% extends 'home/main.html'%}
+{% block content%}
+
+
+  <h1>Formulario de tareas</h1>
+
+
+    <a href="{% url 'home' %}">Volver a Home</a>
+
+    <!--
+
+        La diferencia entre los métodos **GET** y **POST** en HTTP radica en cómo envían datos al servidor y cómo se utilizan en aplicaciones web:
+
+        ### **GET**
+        - Envía los datos en la URL como parámetros de consulta (ejemplo: `example.com?nombre=Juan&edad=30`).
+        - Es visible en la barra de direcciones y se puede almacenar en caché y en el historial del navegador.
+        - Ideal para obtener información sin modificar el estado del servidor.
+        - Tiene una limitación en la cantidad de datos que puede enviar, dependiendo del navegador y servidor.
+
+        ### **POST**
+        - Envía los datos en el cuerpo de la solicitud HTTP, no en la URL.
+        - No es visible en la barra de direcciones y no se almacena en caché ni en el historial.
+        - Se usa para enviar datos de formularios o realizar cambios en el servidor (crear, actualizar, eliminar datos).
+        - No tiene una restricción de tamaño significativa como GET.
+
+        ### **¿Cuándo usar cada uno?**
+        - **GET:** Cuando solo se necesita recuperar información (como buscar productos en una tienda online).
+        - **POST:** Cuando se envían datos sensibles o se modifican recursos en el servidor (como iniciar sesión o enviar un formulario de compra).
+
+        action → URL donde se enviarán los datos.c
+               -->
+
+    <!-- En este caso la misma URL recibira la informacion, por eso 'action' esta vacio -->
+    <form method="POST" action="">
+        <!-- Cargar formulario -->
+
+        {% csrf_token %}
+
+        {{form}}
+
+        <input type="submit" value="Enviar">
+    </form>
+
+
+
+<!--`% csrf_token %` es una etiqueta de plantilla en **Django**, un framework de Python para desarrollo web. Se utiliza dentro de los formularios HTML para incluir un **token CSRF (Cross-Site Request Forgery)** y proteger la aplicación contra ataques de falsificación de solicitudes entre sitios.
+
+### **¿Qué es CSRF?**
+CSRF (Cross-Site Request Forgery) es un tipo de ataque en el que un usuario autenticado es engañado para enviar solicitudes malintencionadas sin su consentimiento. Por ejemplo, si un usuario inicia sesión en su banco y un atacante logra hacer que visite un sitio malicioso, podría ejecutar acciones sin que el usuario lo note.
+
+### **¿Cómo funciona `% csrf_token %`?**
+Cuando usas **Django**, si tu formulario usa el método `POST`, necesitas agregar `% csrf_token %` dentro de la etiqueta `<form>`. Esto genera un token único para cada usuario y lo incluye en la solicitud. Django luego verifica que este token coincida con el que se generó en el servidor.
+
+### **Ejemplo de uso en un formulario en Django**
+```html
+<form method="POST">
+    % csrf_token %
+    <label for="nombre">Nombre:</label>
+    <input type="text" name="nombre" required>
+    <button type="submit">Enviar</button>
+</form>
+```
+
+### **¿Qué pasa si no lo incluyo?**
+Si tienes habilitada la protección CSRF en Django (que está activada por defecto), cuando envíes un formulario sin `% csrf_token %`, obtendrás un error como:
+```
+Forbidden (403) CSRF verification failed. Request aborted.
+```
+
+### **Conclusión**
+Usar `% csrf_token %` es una práctica de seguridad fundamental en Django para evitar ataques CSRF cuando trabajas con formularios que envían datos mediante `POST`.-->
+
+
+{% endblock content%}
