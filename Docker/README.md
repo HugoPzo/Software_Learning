@@ -97,3 +97,6 @@ Por lo regular la primera capa es una distribucion de linux (Alpine), sobre esta
 - Virtualizacion Completa
 
     Todos los elementos del hardware del cliente, son virtualizados. Los clientes no acceden al hardware
+
+
+**Las imagenes de docker se encuentran armadas por capas, si descargamos capas que otras dependencias necesitan, las ocuparan, y no las volveran a descargar**

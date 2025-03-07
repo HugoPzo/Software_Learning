@@ -1,4 +1,4 @@
-from django.shortcuts import render
+
 # from django.http import HttpResponse
 
 # render se usa para renderizar plantillas HTML, aunque en este código no se está usando.

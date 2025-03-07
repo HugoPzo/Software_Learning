@@ -1,0 +1,32 @@
+<!-- base.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Mi Sitio Web{% endblock %}</title>
+</head>
+<body>
+    <!-- Barra de navegación -->
+
+    <div>
+        <ul style="display: flex; align-items: center; justify-content: space-evenly">
+            <li><a href={% url 'home' %}>Home</a></li>
+            <li><a href={% url 'about' %}>About</a></li>
+            <li><a href={% url 'projects' %}>Projects</a></li>
+            <li><a href={% url 'tasks' %}>Tasks</a></li>
+            <li><a href={% url 'form-tasks' %}>Forms</a></li>
+            <li><a href={% url 'form-project' %}>New Project</a></li>
+        </ul>
+    </div>
+
+
+    <!-- Contenido principal de la página -->
+    {% block content %}{% endblock %}
+
+    <!-- Footer común -->
+    <footer>
+        <p>&copy; 2025 Mi Sitio Web. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

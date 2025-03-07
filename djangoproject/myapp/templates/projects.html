@@ -1,0 +1,15 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+
+    <h1>Datos del Proyecto</h1>
+
+    {#Bucle for en Django#}
+
+    {% for project in projects %}
+
+        <p>{{ project.name }}</p>
+
+    {% endfor %}
+
+{% endblock %}
