@@ -1,0 +1,328 @@
+h1 {
+    font-size: 3em;
+    text-align: center;
+}
+
+.container__title {
+    padding: 0 2.5em 2.5em 2.5em;
+}
+
+.container__title h1 {
+    font-weight: 900;
+}
+
+#myname {
+    background: -webkit-linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.main__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ide {
+    border: 1px solid #C0C0C0;
+    border-radius: 1em;
+    padding: 0.8em 2.5em;
+}
+
+.ide__top {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-grow: 1;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    background: #222021;
+}
+
+
+.ide__low {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 3;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.container__codepresentation {
+    display: flex;
+    flex-direction: column;
+    padding: 0 8em;
+    max-width: 50em;
+    min-width: 15em;
+}
+
+.code__archives {
+    flex-grow: 1;
+    border-right: 1px solid gray;
+}
+
+.code-container {
+    padding: 1em;
+    border-radius: 10px;
+    width: fit-content;
+    flex-grow: 3;
+}
+
+.class-name {
+    color: #569cd6;
+}
+
+.def {
+    color: #c586c0;
+}
+
+.self {
+    color: #9cdcfe;
+}
+
+.string {
+    color: #ce9178;
+}
+
+.list {
+    color: #dcdcaa;
+}
+
+/*Buttons Window*/
+.window-controls {
+    display: flex;
+    gap: 8px;
+}
+
+.btn-window {
+    cursor: pointer;
+    border-radius: 50%;
+    border: 1px solid white;
+    width: 1em;
+    height: 1em;
+}
+
+.minimize-btn {
+    background: #ffe789;
+}
+
+.maximize-btn {
+    background: darkgreen;
+}
+
+.close-btn {
+    background: darkred;
+}
+
+
+.line-section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2em;
+}
+
+.title_line {
+    background: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+
+.line-header {
+    flex-grow: 1;
+    height: 2px;
+    background: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
+    margin-left: 10px;
+}
+
+.right {
+    margin-left: 0;
+    margin-right: 10px;
+}
+
+.aboutme__presentation {
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
+    gap: 2em;
+    container-name: about-me_container;
+    container-type: inline-size;
+}
+
+.presentation {
+    text-align: justify;
+    font-weight: 500;
+    font-size: 1.2em;
+    padding: 0 2em;
+}
+
+.aboutme__presentation h4 {
+    margin-bottom: 1em;
+}
+
+.aboutme__photo {
+    padding: 0 2em;
+}
+
+.aboutme__photo img {
+    max-width: 400px;
+}
+
+.vertical_line {
+    height: 18em;
+    width: 1em;
+    background: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
+}
+
+/*Carrousel*/
+
+.carousel-container {
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    position: relative;
+}
+
+.carousel-wrapper {
+    width: 1050px; /* Ajustar para mostrar dos elementos a la vez */
+    overflow: hidden;
+    position: relative;
+    padding: 1em 0;
+}
+
+.carousel {
+    display: flex;
+    gap: 20px;
+    width: max-content;
+    animation: scroll 10s linear infinite;
+}
+
+.carousel-item {
+    position: relative;
+    width: 10em;
+    height: 9em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    overflow: hidden; /* Asegura que el pseudo-elemento no sobresalga */
+    border-radius: .7em;
+    background: transparent;
+}
+
+.carousel-item img {
+    width: 50px;
+}
+
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%); /* Se ajusta para un loop infinito */
+    }
+}
+
+
+/*Projects*/
+
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(2em, 1fr));
+    grid-auto-rows: minmax(8em, auto);
+    gap: 2em;
+}
+
+
+.project_box {
+    padding: 1em 2.5em .4em 2.5em;
+    border: 1px solid #fff;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    text-align: justify;
+    justify-content: space-between;
+}
+
+.project_box h4 {
+    font-weight: 900;
+    font-size: 1.8em;
+}
+
+.project_box span {
+    font-weight: 700;
+}
+
+.tool__ul {
+    gap: 1em;
+    list-style: circle;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+/*GitHub Button*/
+/* From Uiverse.io by kamehame-ha */
+.project-github-button {
+    margin-top: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 15px;
+    gap: 15px;
+    background-color: #181717;
+    outline: 3px #181717 solid;
+    outline-offset: -3px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: 400ms;
+}
+
+.project-github-button .text {
+    color: white;
+    font-weight: 700;
+    font-size: 1em;
+    transition: 400ms;
+}
+
+.project-github-button svg path {
+    transition: 400ms;
+}
+
+.project-github-button:hover {
+    background-color: white;
+    color: black;
+}
+
+.project-github-button:hover .text {
+    color: #181717;
+}
+
+.project-github-button:hover svg path {
+    fill: #181717;
+}
+
+
+/*Phone*/
+
+@media screen and (max-width: 1440px) {
+
+    .aboutme__presentation {
+        flex-direction: column;
+    }
+
+    .vertical_line {
+        height: 2px;
+        width: 80%;
+        background: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
+    }
+}

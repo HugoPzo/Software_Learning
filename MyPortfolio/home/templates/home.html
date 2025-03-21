@@ -1,0 +1,157 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% block extra_head %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}?v=={{ timestamp }}">
+{% endblock %}
+
+{% block content %}
+
+    <div class="main__container">
+
+        <div class="container__title">
+            <h1>Hi, I am <span id="myname">Hugo</span></h1>
+        </div>
+        <div class="container__codepresentation">
+
+            <div class="ide ide__top">
+                <div class="window-controls">
+                    <div class="btn-window minimize-btn"></div>
+                    <div class="btn-window maximize-btn"></div>
+                    <div class="btn-window close-btn"></div>
+                </div>
+            </div>
+            <div class="ide ide__low">
+                <div class="code__archives">
+
+                </div>
+                <div class="code-container">
+                    <p><span class="class-name">class</span> Hugo:</p>
+                    <br>
+                    <p style="margin-left: 20px;"><span class="def">def</span> __init__(<span class="self">self</span>):
+                    </p>
+                    <br>
+                    <p style="margin-left: 40px;"><span class="self">self</span>.name = <span class="string">"Hugo Perez"</span>
+                    </p>
+                    <p style="margin-left: 40px;"><span class="self">self</span>.major = <span class="string">"Software Engineering"</span>
+                    </p>
+                    <p style="margin-left: 40px;"><span class="self">self</span>.goal = <span class="string">"Become a Data Scientist"</span>
+                    </p>
+                    <p style="margin-left: 40px;"><span class="self">self</span>.skills = <span class="list">
+                        ['Python', 'NodeJs', 'JavaScript', 'SQL', 'Linux', 'Docker', 'Git', 'Java', 'Machine Learning']
+                    </span></p>
+                    <p style="margin-left: 40px;"><span class="self">self</span>.abilities = <span class="list">
+                        ['Quick Learner', 'Hard Worker', 'Problem Solver', 'Team Player', 'Adaptability',
+                        'Critical Thinking', 'Strong Communication', 'Attention to Detail']
+                    </span></p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="about-me_container">
+
+        <div class="line-section">
+            <div class="title_line">ABOUT ME</div>
+            <div class="line-header"></div>
+        </div>
+
+        <div class="aboutme__presentation">
+
+            <div class="presentation">
+
+                <h4>WHO AM I?</h4>
+
+                <p>Hi, my name is Hugo Perez. I'm currently a Software Engineering student.
+                    I love technology and computer science. My dream is to become a Data Scientist
+                    and work in football analysis for a professional club. My main expertise is in Python,
+                    and I love building projects with it.
+                </p>
+
+            </div>
+
+            <div class="vertical_line"></div>
+
+            <div class="aboutme__photo">
+                <img src="{% static 'img/personal/FotoPropia.jpeg' %}" alt="Mi Foto">
+            </div>
+
+        </div>
+    </div>
+
+    <div class="skills-container">
+
+        <div class="line-section">
+            <div class="line-header right"></div>
+            <div class="title_line">MY SKILLS</div>
+            <div class="line-header"></div>
+        </div>
+
+        <div class="carousel-container">
+            <div class="carousel-wrapper">
+                <div class="carousel">
+                    {% for skill in skills %}
+                        <div class="carousel-item">
+                            <img src="../../media/{{ skill.skill_image }}" alt="{{ skill.skill_name }}">
+                            <span>{{ skill.skill_name }}</span>
+                        </div>
+                    {% endfor %}
+                    {% for tag in skills %}
+                        <div class="carousel-item">
+                            <img src="../../media/{{ tag.skill_image }}" alt="{{ tag.skill_name }}">
+                            <span>{{ tag.skill_name }}</span>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="projects-section">
+        <div class="line-section">
+            <div class="line-header right"></div>
+            <div class="title_line">MY PROJECTS</div>
+        </div>
+
+        <div class="projects-container">
+
+            {% for project in projects %}
+                <div class="project_box">
+                    <h4>{{ project.name }}</h4>
+                    <span>{{ project.myRole }}</span>
+                    <p>{{ project.description }}</p>
+                    <a href="{{ project.link }}"></a>
+
+                    <!-- From Uiverse.io by kamehame-ha -->
+                    <button class="project-github-button" onclick="window.location.href='{{ project.link }}';">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 0.296997C5.37 0.296997 0 5.67 0 12.297C0 17.6 3.438 22.097 8.205 23.682C8.805 23.795 9.025 23.424 9.025 23.105C9.025 22.82 9.015 22.065 9.01 21.065C5.672 21.789 4.968 19.455 4.968 19.455C4.422 18.07 3.633 17.7 3.633 17.7C2.546 16.956 3.717 16.971 3.717 16.971C4.922 17.055 5.555 18.207 5.555 18.207C6.625 20.042 8.364 19.512 9.05 19.205C9.158 18.429 9.467 17.9 9.81 17.6C7.145 17.3 4.344 16.268 4.344 11.67C4.344 10.36 4.809 9.29 5.579 8.45C5.444 8.147 5.039 6.927 5.684 5.274C5.684 5.274 6.689 4.952 8.984 6.504C9.944 6.237 10.964 6.105 11.984 6.099C13.004 6.105 14.024 6.237 14.984 6.504C17.264 4.952 18.269 5.274 18.269 5.274C18.914 6.927 18.509 8.147 18.389 8.45C19.154 9.29 19.619 10.36 19.619 11.67C19.619 16.28 16.814 17.295 14.144 17.59C14.564 17.95 14.954 18.686 14.954 19.81C14.954 21.416 14.939 22.706 14.939 23.096C14.939 23.411 15.149 23.786 15.764 23.666C20.565 22.092 24 17.592 24 12.297C24 5.67 18.627 0.296997 12 0.296997Z"
+                                  fill="white"></path>
+                        </svg>
+                        <p class="text">Click me</p>
+                    </button>
+
+                    <ul class="navbar__ul tool__ul">
+                        {% for tool in project.tools %}
+                            <li class="navbar__item item__link tool_item">{{ tool }}</li>
+                        {% endfor %}
+                    </ul>
+
+                </div>
+            {% endfor %}
+
+        </div>
+    </div>
+
+
+
+
+{% endblock %}
+
+
+<script src="{% static 'js/home.js' %}"></script>

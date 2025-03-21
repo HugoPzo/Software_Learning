@@ -11,3 +11,10 @@ class Car:
         self.year = year # instance variable
         self.model = model # instance variable
         self.color = color # instance variable
+
+
+# Example usage:
+hugo = Hugo()
+print(hugo.introduce())
+print(hugo.learn("Deep Learning"))
+print(hugo.show_skills())

@@ -844,12 +844,26 @@ urlpatterns = [ # Asignamos 'name' a nuestros endpoints
 
 ## Static Files
 
-3:00:54
+**Lo que hemos estado haciendo es procesar la informacion de una base de datos y procesarla
+para que se muestre, en realidad, nosotros no estamos escribiendo ese codigo, si no que es dinamico,
+para cargar archivos estaticos, es decir (css, jsb, imagenes, videos, etc...) es asi**
+
+Los archivos estaticos nos permiten ser servidos por aplicacion
+
+1. Debemos crear una carpeta 'static' en nuestra aplicacion
+2. En esa carpeta podemos crear otras carpetas que sean (JS, CSS/Styles, IMG)
+3. En las carpetas agregamos los archivos deseados de cada area
 
 
+**Los llamamos de esta manera**
+```html
+    {% load static %} -> Esta etiqueta va en cada plantilla que ocupemos la carpeta static
+
+    <img src="{% static 'img/img_prueba.png' %}" alt="Imagen prueba">
+    <link rel="stylesheet" href="{% static 'css/stylebase.css' %}">
 
 
-
+```
 
 
 

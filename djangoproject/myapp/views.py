@@ -39,7 +39,9 @@ def form_tasks(request):
     else:
         title = request.POST['title']
         description = request.POST['description']
-        Task.objects.create(title=title, description=description, project_id=2)
+        Task.objects.create(title=title,
+                            description=description,
+                            project_id=2)
         return redirect('/tasks')
 
 def new_project(request):

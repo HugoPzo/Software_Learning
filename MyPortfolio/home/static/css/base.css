@@ -1,0 +1,301 @@
+html, body {
+    overflow-x: hidden;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    box-sizing: border-box;
+    background: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    font-size: 1em;
+}
+
+h1, h2, h3, h4, h5, h6, p, ul, li, div {
+    margin: 0;
+    padding: 0;
+
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+    margin-bottom: 20px;
+}
+
+.flex--row {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex--column {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.body_container {
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 0 1em;
+}
+
+.container__flex {
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* Estilos del Nav */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2.5em 0;
+    flex-wrap: wrap;
+}
+
+.navbar__ul {
+    display: flex;
+    gap: 2em;
+}
+
+.navbar__item {
+    list-style: none;
+}
+
+.item__link {
+    text-decoration: none;
+    color: white;
+}
+
+.item__link img {
+    width: 2em;
+}
+
+/*Estilo de Botones*/
+.navbar--links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 1em;
+}
+
+.navbar--links a {
+    padding: 0.5em 1em;
+    position: relative;
+    text-decoration: none;
+    color: white;
+    font-size: 1em;
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar--links a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0%;
+    height: 3px;
+    background: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
+    transition: all 0.4s ease-in-out;
+    transform: translateX(-50%);
+}
+
+
+.navbar--links a:hover {
+    color: #ffd6eb;
+}
+
+.navbar--links a:hover::after {
+    width: 100%;
+}
+
+
+/*Checkbox Style*/
+
+
+/*Download CV*/
+/* From Uiverse.io by vinodjangid07 */
+.button__nav {
+    width: 3em;
+    height: 3em;
+    border: none;
+    border-radius: 50%;
+    background-color: rgb(27, 27, 27);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    transition-duration: .3s;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.11);
+}
+
+.svgIcon {
+    fill: rgb(214, 178, 255);
+}
+
+.icon2 {
+    width: 18px;
+    height: 5px;
+    border-bottom: 2px solid #ffd6eb;
+    border-left: 2px solid #ffd6eb;
+    border-right: 2px solid #ffd6eb;
+}
+
+.tooltip {
+    position: absolute;
+    right: -105px;
+    opacity: 0;
+    background-color: rgb(12, 12, 12);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition-duration: .2s;
+    pointer-events: none;
+    letter-spacing: 0.5px;
+}
+
+.tooltip::before {
+    position: absolute;
+    content: "";
+    width: 10px;
+    height: 10px;
+    background-color: rgb(12, 12, 12);
+    background-size: 1000%;
+    background-position: center;
+    transform: rotate(45deg);
+    left: -5%;
+    transition-duration: .3s;
+}
+
+.button__nav:hover .tooltip {
+    opacity: 1;
+    transition-duration: .3s;
+}
+
+.button__nav:hover {
+    background: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);;
+    transition-duration: .3s;
+}
+
+.button__nav:hover .icon2 {
+    border-bottom: 2px solid rgb(235, 235, 235);
+    border-left: 2px solid rgb(235, 235, 235);
+    border-right: 2px solid rgb(235, 235, 235);
+}
+
+.button__nav:hover .svgIcon {
+    fill: rgb(255, 255, 255);
+    animation: slide-in-top 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@keyframes slide-in-top {
+    0% {
+        transform: translateY(-10px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+
+/*Footer*/
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4em;
+}
+
+.footer_ul {
+    display: flex;
+    gap: 2em;
+}
+
+
+@media screen and (max-width: 1050px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1em;
+    }
+
+    .navbar__ul {
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    .body_container {
+        max-width: 95%;
+        padding: 0 1em;
+    }
+}
+
+
+/*!*See on Github*!*/
+
+/*!*CSS*!*/
+/*.btn-github {*/
+/*  cursor: pointer;*/
+/*  display: flex;*/
+/*  gap: 0.5rem;*/
+/*  border: none;*/
+
+/*  transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);*/
+/*  border-radius: 100px;*/
+/*  font-weight: 800;*/
+/*  place-content: center;*/
+
+/*  padding: 0.75rem 1rem;*/
+/*  font-size: 0.825rem;*/
+/*  line-height: 1rem;*/
+
+/*  background-color: rgba(0, 0, 0, 0.4);*/
+/*  box-shadow:*/
+/*    inset 0 1px 0 0 rgba(255, 255, 255, 0.04),*/
+/*    inset 0 0 0 1px rgba(255, 255, 255, 0.04);*/
+/*  color: #fff;*/
+/*}*/
+
+/*.btn-github:hover {*/
+/*  box-shadow:*/
+/*    inset 0 1px 0 0 rgba(255, 255, 255, 0.08),*/
+/*    inset 0 0 0 1px rgba(252, 232, 3, 0.08);*/
+/*  color: #fce803;*/
+/*  transform: translate(0, -0.25rem);*/
+/*  background-color: rgba(0, 0, 0, 0.5);*/
+/*}*/
+
+/*!*HTML*!*/
+/*<!-- From Uiverse.io by Creatlydev --> */
+/*<button class="btn-github">*/
+/*  <svg*/
+/*    width="16"*/
+/*    height="16"*/
+/*    viewBox="0 0 16 16"*/
+/*    fill="none"*/
+/*    xmlns="http://www.w3.org/2000/svg"*/
+/*  >*/
+/*    <path*/
+/*      d="M7.99992 1.33331C7.12444 1.33331 6.25753 1.50575 5.4487 1.84078C4.63986 2.17581 3.90493 2.66688 3.28587 3.28593C2.03563 4.53618 1.33325 6.23187 1.33325 7.99998C1.33325 10.9466 3.24659 13.4466 5.89325 14.3333C6.22659 14.3866 6.33325 14.18 6.33325 14C6.33325 13.8466 6.33325 13.4266 6.33325 12.8733C4.48659 13.2733 4.09325 11.98 4.09325 11.98C3.78659 11.2066 3.35325 11 3.35325 11C2.74659 10.5866 3.39992 10.6 3.39992 10.6C4.06659 10.6466 4.41992 11.2866 4.41992 11.2866C4.99992 12.3 5.97992 12 6.35992 11.84C6.41992 11.4066 6.59325 11.1133 6.77992 10.9466C5.29992 10.78 3.74659 10.2066 3.74659 7.66665C3.74659 6.92665 3.99992 6.33331 4.43325 5.85998C4.36659 5.69331 4.13325 4.99998 4.49992 4.09998C4.49992 4.09998 5.05992 3.91998 6.33325 4.77998C6.85992 4.63331 7.43325 4.55998 7.99992 4.55998C8.56659 4.55998 9.13992 4.63331 9.66659 4.77998C10.9399 3.91998 11.4999 4.09998 11.4999 4.09998C11.8666 4.99998 11.6333 5.69331 11.5666 5.85998C11.9999 6.33331 12.2533 6.92665 12.2533 7.66665C12.2533 10.2133 10.6933 10.7733 9.20659 10.94C9.44659 11.1466 9.66659 11.5533 9.66659 12.1733C9.66659 13.0666 9.66659 13.7866 9.66659 14C9.66659 14.18 9.77325 14.3933 10.1133 14.3333C12.7599 13.44 14.6666 10.9466 14.6666 7.99998C14.6666 7.1245 14.4941 6.25759 14.1591 5.44876C13.8241 4.63992 13.333 3.90499 12.714 3.28593C12.0949 2.66688 11.36 2.17581 10.5511 1.84078C9.7423 1.50575 8.8754 1.33331 7.99992 1.33331V1.33331Z"*/
+/*      fill="currentcolor"*/
+/*    ></path>*/
+/*  </svg>*/
+/*  <span>View on Github</span>*/
+/*</button>*/
+
+
