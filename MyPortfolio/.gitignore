@@ -1,0 +1,15 @@
+# Configuración y credenciales
+.env
+*.pyc
+__pycache__/
+db.sqlite3
+
+# Archivos de entorno virtual
+venv/
+env/
+
+# Archivos estáticos y de caché
+staticfiles/
+media/
+
+claves

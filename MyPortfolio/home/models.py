@@ -14,10 +14,9 @@ class SkillTag(models.Model):
 class Project(models.Model):
     name = models.CharField(max_length=250, blank=True)
     myRole = models.CharField(max_length=250, null=True, blank=True)
-    tools = models.JSONField(default=list)
-    description = models.TextField(null=True, blank=True)
-    link = models.URLField(max_length=500, null=True, default="#")
-
+    tools = models.JSONField(default=list, null=True, blank=True)
+    description = models.TextField(null=True, blank=True, default="No description")
+    link = models.CharField(max_length=500, null=True, blank=True, default="#")
 
     def __str__(self):
         return self.name
