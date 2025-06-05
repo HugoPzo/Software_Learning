@@ -76,8 +76,8 @@ CMD ["node", "/home/app/index.js"]
 
 ## Agrupar contenedores o asociarlos a la misma red.
 
-- docker network ls: Lista las redes de contenedores existentes en docker.
-- docker create “red_nam”: Crea una red de contenedores con el nombre indicado.
+- `docker network ls`: Lista las redes de contenedores existentes en docker.
+- `docker create “red_nam”`: Crea una red de contenedores con el nombre indicado.
 
 <br>
 
